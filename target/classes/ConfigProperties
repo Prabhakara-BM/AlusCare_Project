@@ -1,0 +1,92 @@
+
+url = https://test.theclassroom.biz
+username = developer@vectorseducation.com
+password =  classroom7@brigosha
+browser = chrome
+
+
+<!--  Student Details  -->
+
+Studentname = Mahendar Orupula
+Studentno = 9110470677
+Studentemail = mahendar.orupula@brigosha.com
+
+
+// Test Prod  //
+
+url1 = https://testprod.aulas.in
+
+username1 = orupula.mahendar@brigosha.com
+
+password1 = 1234
+
+<!--Schedule Module  Data_Opearadtor -->
+SMDPhonenum=99020 40608
+OTP=592726
+
+<!--Schedule Module  Student -->
+SMSPhonenum=99333 31111
+OTP=592726
+
+<!--Schedule Module  Teacher -->
+SMTPhonenum=99699 66996
+OTP=592726
+
+<!--Schedule Module  Operator -->
+SMOPhonenum=99863 36886
+OTP=592726
+
+<!--Test Module  Data_Opearadtor -->
+TMDPhonenum=99020 40608
+OTP=592726
+
+<!--Test Module Student -->
+TMDPhonenum=99333 31111
+OTP=592726
+
+<!--Test Module  Teacher -->
+TMTPhonenum=99699 66996
+OTP=592726
+
+<!--Schedule Module  Operator -->
+TMOPhonenum=99863 36886
+OTP=592726
+
+<!--PracticeTest Module  Data_Opearadtor -->
+PTDPhonenum=99020 40608
+OTP=592726
+
+<!--Test Module Student -->
+PTSPhonenum=99333 31111
+OTP=592726
+
+<!--Test Module  Teacher -->
+PTTPhonenum=99699 66996
+OTP=592726
+
+<!--Schedule Module  Operator -->
+PTOPhonenum=99863 36886
+OTP=592726
+
+
+
+
+
+
+
+<!--- Mahendar Orupula User Management Creditials-->
+
+AdminNumber = 98765 43003
+
+DataOperatorAdmin =97865 43129
+
+OperationAdmin =98978 97808
+
+DefaultOTP  = 592726
+
+
+
+
+
+
+
