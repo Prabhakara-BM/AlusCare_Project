@@ -174,4 +174,43 @@ public static void WaitTil(int Wait)
 		e.printStackTrace();
 	}
 }
+//How to randomly generate different First and Last Name of users to a List with using Random Generator in java? [closed]
+public static void generateFirstAndLastName() {
+    int leftLimit = 97; // letter 'a'
+    int rightLimit = 122; // letter 'z'
+    int targetStringLength = 10;
+    Random random = new Random();
+
+    for(int x=1;x<=100;x++) {
+        StringBuilder buffer = new StringBuilder(targetStringLength);
+    for (int i = 0; i < targetStringLength; i++) {
+        int randomLimitedInt = leftLimit + random.nextInt(rightLimit - leftLimit + 1);
+        buffer.append((char) randomLimitedInt);
+    }
+    String generatedString = buffer.toString();
+
+
+    System.out.println(generatedString);
+    }
+}
+
+public static void takeSnapShot(WebDriver webdriver,String fileWithPath) throws Exception{
+
+    //Convert web driver object to TakeScreenshot
+
+    TakesScreenshot scrShot =((TakesScreenshot)webdriver);
+
+    //Call getScreenshotAs method to create image file
+
+            File SrcFile=scrShot.getScreenshotAs(OutputType.FILE);
+
+        //Move image file to new destination
+
+            File DestFile=new File(fileWithPath);
+
+            //Copy file at destination
+
+            FileUtils.copyFile(SrcFile, DestFile);
+
+}
 }

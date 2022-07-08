@@ -303,6 +303,14 @@ public class UserManagementPage extends BaseTest {
 		Wait(UserManagement);
 		UserManagement.click();
 	}
+	
+	public void clickOnUserManagement() throws InterruptedException {
+		//Wait(UserManagement);
+		//UserManagement.click();
+		wait(3000);
+		driver.findElement(By.xpath("//*[contains(@href,'/user-management')]")).click();
+		System.out.println("clicked on Usermanagement module");
+	}
     public void addaUser(String selectRole) throws InterruptedException
     {
     	Wait(AddUser);
@@ -425,7 +433,7 @@ public class UserManagementPage extends BaseTest {
 			//name.append(captals.charAt(rnd.nextInt(captals.length())));
 		}
     	WaitTil(2000);
-    	Name.sendKeys("Einstein"+" "+name);
+    	Name.sendKeys(name);
     	WaitTil(2000);
     	long phoneNumber=Math.round(Math.random()*1000000000L);
 		Number.sendKeys("9"+phoneNumber);
@@ -866,6 +874,8 @@ public class UserManagementPage extends BaseTest {
 
 	public void viewmoreCancelTeacherCreation() throws InterruptedException {
 		Thread.sleep(2000);
+		WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//button[@class='ant-btn ant-btn-primary'])[1]")));
 		AddUser.click();
 		Thread.sleep(2000);
 		CancelButton1.click();

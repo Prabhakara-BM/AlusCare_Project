@@ -11,7 +11,7 @@ import Pages.LoginClass;
 import Pages.UserManagementPage;
 import Util.TestUtil;
 
-public class UserManagementTest extends BaseTest {
+public class UserManagementSuperAdminTest extends BaseTest {
 
 	LoginClass LC;
 	HomePage1 HP;
@@ -19,7 +19,7 @@ public class UserManagementTest extends BaseTest {
 
 	UserManagementPage UM;
 
-	public UserManagementTest() {
+	public UserManagementSuperAdminTest() {
 		super();
 	}
 
@@ -164,7 +164,9 @@ public class UserManagementTest extends BaseTest {
 		LC.LogOut();
 		WaitTil(2000);
 	}
-	@Test(priority = 8)
+	
+	//Admin login 
+/*	@Test(priority = 8)
 	public void teacherAdminLogin() throws InterruptedException
 	{
 		WaitTil(2000);
@@ -523,7 +525,7 @@ public class UserManagementTest extends BaseTest {
 		WaitTil(2000);
 		UM.adminValidateViewMorePage();
 		
-	}
+	}*/
 
 	
 }
