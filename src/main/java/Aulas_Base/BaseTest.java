@@ -194,8 +194,8 @@ public static void generateFirstAndLastName() {
     }
 }
 
-public static void takeSnapShot(WebDriver webdriver,String fileWithPath) throws Exception{
-
+public static void takeSnapShot(WebDriver webdriver,String methodName ) throws Exception{
+	String fileWithPath="C:\\Users\\Prabhakar\\eclipse-workspace\\AulasCare\\Screenshots"+methodName+".png";
     //Convert web driver object to TakeScreenshot
 
     TakesScreenshot scrShot =((TakesScreenshot)webdriver);
@@ -213,4 +213,6 @@ public static void takeSnapShot(WebDriver webdriver,String fileWithPath) throws 
             FileUtils.copyFile(SrcFile, DestFile);
 
 }
+
+
 }

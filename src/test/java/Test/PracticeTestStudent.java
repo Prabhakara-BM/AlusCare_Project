@@ -28,7 +28,7 @@ public class PracticeTestStudent  extends BaseTest{
 
 		LC = new LoginClass();
 		
-		HP = LC.newLoginUsingMobile(prop.getProperty("PTTPhonenum"),prop.getProperty("OTP"));
+		HP = LC.newLoginUsingMobile(prop.getProperty("PTSPhonenum"),prop.getProperty("OTP"));
 		
 		}
 	@Test(priority=1)
@@ -37,7 +37,12 @@ public class PracticeTestStudent  extends BaseTest{
 	//	PC.Overview();
 		wait(2000);
 		//PC. AllTypeTest("Chapter Test");
-		PC.TestType();
+		System.out.println("The test case 1 is started ");
+		PC.clickOnPracticeTest();
+		PC.countNumberOfBlock();
+		System.out.println("The test case 2 is Completed ");
+		
+		
 	}
 
 }

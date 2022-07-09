@@ -883,5 +883,53 @@ public class PracticeTestPage extends BaseTest {
 			
 		}
 	}
+	
+	public void clickOnPracticeTest() {
+		wait(3000);
+		driver.findElement(By.xpath("//*[contains(@href,'/student-practice-home')]")).click();
+		String ele=driver.findElement(By.xpath("//*[contains(@href,'/student-practice-home')]")).getText();
+		System.out.println("Clicked on "+ele);
+		
+	}
+	
+	public void scrollDownOperaion(WebElement Element) {
+		wait(3000);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView();", Element);
+		System.out.println("Scroll down is done : ");
+	}
+	
+	public void countNumberOfBlock() {
+		wait(3000);
+		WebElement ele=driver.findElement(By.xpath("//*[text()='Syllabus']"));
+		scrollDownOperaion(ele);
+		List<WebElement> WE=driver.findElements(By.xpath("//*[@class='m-r-15 r-c-c-c p-10 customCardShadow cursor-pointer shadow-box hover-shadow']"));
+		int size=WE.size();
+		System.out.println("The size is :"+ " "+size);
+		for(int i=1;i<=size;i++) {
+			String name=driver.findElement(By.xpath("(//*[@class='m-r-15 r-c-c-c p-10 customCardShadow cursor-pointer shadow-box hover-shadow'])["+i+"]")).getText();
+			System.out.println("The names are :"+" "+name);
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
 
