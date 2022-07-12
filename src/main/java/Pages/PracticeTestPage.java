@@ -899,7 +899,7 @@ public class PracticeTestPage extends BaseTest {
 		System.out.println("Scroll down is done : ");
 	}
 	
-	public void countNumberOfBlock() {
+	public void countNumberOfBlock(String TestType) {
 		wait(3000);
 		WebElement ele=driver.findElement(By.xpath("//*[text()='Syllabus']"));
 		scrollDownOperaion(ele);
@@ -909,9 +909,95 @@ public class PracticeTestPage extends BaseTest {
 		for(int i=1;i<=size;i++) {
 			String name=driver.findElement(By.xpath("(//*[@class='m-r-15 r-c-c-c p-10 customCardShadow cursor-pointer shadow-box hover-shadow'])["+i+"]")).getText();
 			System.out.println("The names are :"+" "+name);
+			if(name.contains(TestType)) {
+				wait(3000);
+			driver.findElement(By.xpath("(//*[@class='m-r-15 r-c-c-c p-10 customCardShadow cursor-pointer shadow-box hover-shadow'])["+i+"]")).click();
+			break;
 		}
 	}
 	
+	}
+	public void selectionOfClassInTest() {
+		wait(3000);
+		List<WebElement> WE=driver.findElements(By.xpath("//*[@class='cursor-pointer m-l-10 r-afs flex-wrap full-height m-t-20']"));
+		int size=WE.size();
+		System.out.println("The size of no. of classes are  :"+ " "+size);
+		if(size!=0) {
+			wait(3000);
+			driver.findElement(By.xpath("(//*[@class='cursor-pointer m-l-10 r-afs flex-wrap full-height m-t-20'])[1]")).click();
+			//break;
+			wait(3000);
+			
+		}
+		else {
+			System.out.println("The selected test type has no classes in it ...");
+			wait(3000);
+			driver.findElement(By.xpath("//*[@class='m-b-20']")).click();
+			System.out.println("Navigated back to Home page ...");
+			
+		}
+	}
+	public void clickOnAttends() {
+		wait(3000);
+		driver.findElement(By.xpath("//*[@id='rc-tabs-2-tab-Attempted']")).click();
+		System.out.println("Cliked on :ATTEMPTED ");
+		/*List<WebElement> WE=driver.findElements(By.xpath("//*[@class='ant-tabs-tab-btn']"));
+		int size=WE.size();
+		System.out.println("The size of no. of clickble elements are  :"+ " "+size);
+		for(int i=1;i<=size;i++) {
+			String nameis=driver.findElement(By.xpath("(//*[@class='ant-tabs-tab-btn'])["+i+"]")).getText();
+			System.out.println("The names are :"+" "+nameis);
+			driver.findElement(By.xpath("(//*[@class='ant-tabs-tab-btn'])["+i+"]")).click();
+			wait(3000);*/
+		// to check No attempted test(s) message is displayed or not 
+		boolean t = driver.findElement(By.xpath("//*[@class='m-l-15']")).isDisplayed();
+		if(t) {
+			String name=driver.findElement(By.xpath("//*[@class='m-l-15']")).getText();
+			System.out.println("Element is dispalyed: "+" "+name);
+		}
+		else {
+			 System.out.println("No attempted test(s) message is displayed");
+			 
+		}
+		
+	}
+	
+	public void clickOnAvailable() {
+		wait(3000);
+		driver.findElement(By.xpath("//*[@id='rc-tabs-2-tab-Available']")).click();
+		System.out.println("Cliked on :AVAILABLE ");
+		boolean t = driver.findElement(By.xpath("//*[@class='m-l-40']")).isDisplayed();
+		if(t) {
+			String name=driver.findElement(By.xpath("//*[@class='m-l-40']")).getText();
+			System.out.println("Element is dispalyed: "+" "+name);
+		}
+		else {
+			 System.out.println("No test available message is displayed");
+			 
+		}
+		
+		
+		
+	}
+	
+	public void clickOnSearchButton() {
+		wait(3000);
+		String str="Heloo12344";
+		WebElement ele=driver.findElement(By.xpath("//*[@placeholder='Search by test name']"));
+		
+		ele.sendKeys(str);
+		ele.sendKeys(Keys.CONTROL+"a");
+		wait(3000);
+		ele.sendKeys(Keys.DELETE);
+		System.out.println("All the search operaion was completetd successfully ...");
+		
+		
+		
+	}
+	}
+
+	
+
 	
 	
 	
@@ -928,8 +1014,5 @@ public class PracticeTestPage extends BaseTest {
 	
 	
 	
-	
-	
-	
-}
+
 

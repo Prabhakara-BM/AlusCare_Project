@@ -1,31 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
-<listeners>
-<listener class-name="TestNGListerns.Listeners"/>
-</listeners>
   <test thread-count="5" name="Test">
     <classes>
       <class name="Test.TestModuleAdmin"/>
-      <class name="Test.RegistrationTest"/>
+      <class name="Test.PracticeTestDataOperator"/>
       <class name="Test.TestModuleOperator"/>
       <class name="Test.TestModuleStudentLogin"/>
-      <class name="Test.NotificationTest"/>
-      <class name="Test.TeacherProfileCreation"/>
-      <class name="Test.ClassroomsTest"/>
+      <class name="Test.PracticeTestStudent"/>
       <class name="Test.ScheduleModuleAdmin"/>
-      <class name="UserManagementTest.ValidateTeacherViewMoreTest"/>
       <class name="Test.ScheduleModuleStudent"/>
-      <class name="UserManagementTest.ValidateStudentViewMoreTest"/>
-      <class name="UserManagementTest.ManuallyAddAUserTest"/>
-      <class name="Test.ScheduleValidation"/>
-      <class name="UserManagementTest.ValidateUserManagementTest"/>
-      <class name="UserManagementTest.ValidateDataOperatorViewMoreTest"/>
+      <class name="Test.UserManagementDataOpeSide"/>
       <class name="Test.DigitalLibraryTest"/>
-      <class name="Test.CoursesTest"/>
       <class name="Test.ScheduleModuleDataOperator"/>
+      <class name="Test.ScheduleModuleOperator"/>
+      <class name="Test.PracticeTestAdmin"/>
+      <class name="Test.RegistrationTest"/>
+      <class name="Test.NotificationTest"/>
+      <class name="Test.ClassroomsTest"/>
+      <class name="Test.PracticetestSuperAdmin"/>
+      <class name="Test.ScheduleValidation"/>
+      <class name="Test.PracticeTestTeacher"/>
+      <class name="Test.UserManagementOperatorSide"/>
+      <class name="Test.UserManagementTeacherSide"/>
+      <class name="Test.CoursesTest"/>
+      <class name="Test.ScheduleModuleTeacher"/>
       <class name="Test.TestModuleTeacher"/>
       <class name="Test.TestModuleDataOperator"/>
+      <class name="Test.UserManagementSuperAdminTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

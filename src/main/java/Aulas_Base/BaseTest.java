@@ -98,7 +98,7 @@ public class BaseTest {
 		
 	}
 
-	public void getScreenShotPath(String testCaseName,WebDriver driver) throws IOException
+	/*public void getScreenShotPath(String testCaseName,WebDriver driver) throws IOException
 	{
 	TakesScreenshot ts=(TakesScreenshot) driver;
 	File source = ts.getScreenshotAs(OutputType.FILE);
@@ -106,7 +106,7 @@ public class BaseTest {
 	//FileUtils.copyFile(source, new File("C:\\Users\\Brigosha_Guest\\eclipse-workspace\\AulasProject\\Screenshots"+testCaseName+"_"+".jpg"));
 	FileUtils.copyFile(source, new File(DestinationFile));
 
-	}
+	}*/
 	
 
 	public void wait(int wait){
@@ -190,29 +190,22 @@ public static void generateFirstAndLastName() {
     String generatedString = buffer.toString();
 
 
+    
     System.out.println(generatedString);
     }
 }
 
-public static void takeSnapShot(WebDriver webdriver,String methodName ) throws Exception{
-	String fileWithPath="C:\\Users\\Prabhakar\\eclipse-workspace\\AulasCare\\Screenshots"+methodName+".png";
-    //Convert web driver object to TakeScreenshot
 
-    TakesScreenshot scrShot =((TakesScreenshot)webdriver);
-
-    //Call getScreenshotAs method to create image file
-
-            File SrcFile=scrShot.getScreenshotAs(OutputType.FILE);
-
-        //Move image file to new destination
-
-            File DestFile=new File(fileWithPath);
-
-            //Copy file at destination
-
-            FileUtils.copyFile(SrcFile, DestFile);
-
+public void getScreenShotAS(String name) {
+	TakesScreenshot ts1 = (TakesScreenshot)driver;
+    File file1 = ts1.getScreenshotAs(OutputType.FILE);
+			
+    try {
+         // FileUtils.copyFile(file1, new File("./Screenshots/Test2_SearchUser.png"));
+    	 FileUtils.copyFile(file1, new File("./Screenshots/"+name+".png"));
+	} catch (IOException e) {
+	e.printStackTrace();
 }
 
-
+}
 }

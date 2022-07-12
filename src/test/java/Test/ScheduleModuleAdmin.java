@@ -13,7 +13,8 @@ import Pages.AnnouncementPage;
 import Pages.HomePage1;
 import Pages.LoginClass;
 import Pages.SchedulePage;
-//@Listeners(TestNGListener.Listeners.class)
+
+@Listeners(listerns_Demo.Listerns_Test.class)
 
 public class ScheduleModuleAdmin extends Aulas_Base.BaseTest {
 	LoginClass LC;

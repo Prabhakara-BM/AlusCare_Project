@@ -32,15 +32,24 @@ public class PracticeTestStudent  extends BaseTest{
 		
 		}
 	@Test(priority=1)
-	public void Overview() throws InterruptedException
+	public void Overview() throws Exception
 	{
 	//	PC.Overview();
 		wait(2000);
 		//PC. AllTypeTest("Chapter Test");
 		System.out.println("The test case 1 is started ");
 		PC.clickOnPracticeTest();
-		PC.countNumberOfBlock();
-		System.out.println("The test case 2 is Completed ");
+		PC.countNumberOfBlock("Full Test");
+		PC.selectionOfClassInTest();
+		PC.clickOnAttends();
+		PC.clickOnAvailable();
+		PC.clickOnSearchButton();
+		System.out.println("The test case 1 is Completed ");
+		wait(3000);
+			
+		
+		wait(3000);
+		
 		
 		
 	}

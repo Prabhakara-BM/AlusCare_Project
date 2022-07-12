@@ -4,7 +4,9 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
-public class Listerns_Test implements ITestListener{
+import Aulas_Base.BaseTest;
+
+public class Listerns_Test  extends BaseTest implements ITestListener{
 	@Override		
     public void onFinish(ITestContext Result) 					
     {		
@@ -26,7 +28,9 @@ public class Listerns_Test implements ITestListener{
     // When Test case get failed, this method is called.		
     @Override		
     public void onTestFailure(ITestResult Result) 					
-    {		
+    {
+    	String name=Result.getName();
+    	getScreenShotAS(name);
     System.out.println("The name of the testcase failed is :"+Result.getName());					
     }		
 
@@ -48,7 +52,7 @@ public class Listerns_Test implements ITestListener{
     @Override		
     public void onTestSuccess(ITestResult Result)					
     {		String MethodName=Result.getName();
-    	getScreenShotPath(driver,MethodName);
+    
     System.out.println("The name of the testcase passed is :"+Result.getName());					
     }		
 
