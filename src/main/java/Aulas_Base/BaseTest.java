@@ -208,4 +208,11 @@ public void getScreenShotAS(String name) {
 }
 
 }
+//Getting the current time and date on a 24 hour timescale
+public void currentTimeAndDate24() {
+	
+	SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
+	String str = sdf.format(new Date());
+	System.out.println("The current time and date on a 24 hour timescale: "+str);
+}
 }

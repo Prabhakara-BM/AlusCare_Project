@@ -204,8 +204,11 @@ public class ScheduleModuleAdmin extends Aulas_Base.BaseTest {
 		System.out.println("The test case 8 was completetd  ");
 
 	}
-	
-	
+	@Test(priority = 10)
+	public void doingDateSelection() {
+		wait(3000);
+		currentTimeAndDate24();
+	}
 }
 	
 	

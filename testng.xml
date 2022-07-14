@@ -4,8 +4,10 @@
   <test thread-count="5" name="Test">
     <classes>
       <class name="Test.TestModuleAdmin"/>
+      <class name="Test.feeManagementSuperAdminTest"/>
       <class name="Test.PracticeTestDataOperator"/>
       <class name="Test.TestModuleOperator"/>
+      <class name="Test.operationFeeManager"/>
       <class name="Test.TestModuleStudentLogin"/>
       <class name="Test.PracticeTestStudent"/>
       <class name="Test.ScheduleModuleAdmin"/>
@@ -19,8 +21,10 @@
       <class name="Test.NotificationTest"/>
       <class name="Test.ClassroomsTest"/>
       <class name="Test.PracticetestSuperAdmin"/>
+      <class name="Test.dataOperatorFeeManagerTest"/>
       <class name="Test.ScheduleValidation"/>
       <class name="Test.PracticeTestTeacher"/>
+      <class name="Test.teacherFeeManagerTest"/>
       <class name="Test.UserManagementOperatorSide"/>
       <class name="Test.UserManagementTeacherSide"/>
       <class name="Test.CoursesTest"/>

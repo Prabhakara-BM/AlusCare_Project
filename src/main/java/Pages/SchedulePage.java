@@ -32,7 +32,9 @@ public class SchedulePage extends Aulas_Base.BaseTest {
 	}
 
 	public void clickOnCreateButton() throws InterruptedException {
-		Thread.sleep(6000);
+		//Thread.sleep(6000);
+		WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//*[@class='ant-btn ant-btn-primary'])[1]")));
 		driver.findElement(By.xpath("(//*[@class='ant-btn ant-btn-primary'])[1]")).click();
 		System.out.println("--clicked on the create button-- ");
 	}
@@ -50,7 +52,7 @@ public class SchedulePage extends Aulas_Base.BaseTest {
 			String subjectName = driver
 					.findElement(By.xpath("(//*[@class='ant-select-item-option-content'])[" + i + "]")).getText();
 			//System.out.println("The subject name is :" + " " + subjectName);
-			if (subjectName.equalsIgnoreCase("Android Development")) {
+			if (subjectName.equalsIgnoreCase("English")) {
 				wait(3000);
 				driver.findElement(By.xpath("(//*[@class='ant-select-item-option-content'])[" + i + "]")).click();
 				System.out.println("----The selection of subject  "+subjectName+" is successfull----");
@@ -74,7 +76,7 @@ public class SchedulePage extends Aulas_Base.BaseTest {
 					.findElement(By.xpath("(//*[@class='ant-select-item ant-select-item-option'])[" + i + "]"))
 					.getText();
 		
-			if (nameOfClass.equalsIgnoreCase("Automation Testing-CSE")) {
+			if (nameOfClass.equalsIgnoreCase("AutomatinTEST123-a,b")) {
 				wait(3000);
 				driver.findElement(By.xpath("(//*[@class='ant-select-item ant-select-item-option'])[" + i + "]"))
 						.click();
@@ -98,7 +100,7 @@ public class SchedulePage extends Aulas_Base.BaseTest {
 			String teacherName = driver
 					.findElement(By.xpath("(//*[@class='ant-select-item-option-content'])[" + i + "]")).getText();
 			
-			if (teacherName.equalsIgnoreCase("Ashok")) {
+			if (teacherName.equalsIgnoreCase("BriTeacher")) {
 				wait(3000);
 				driver.findElement(By.xpath("(//*[@class='ant-select-item-option-content'])[" + i + "]")).click();
 				System.out.println("The subject name is :" + " " + teacherName);
@@ -315,14 +317,19 @@ public class SchedulePage extends Aulas_Base.BaseTest {
 				System.out.println("Clicked on" + nameIS + "button");
 				break;
 			}
+			wait(3000);
+			
 		}
 	//	messageAndDescription();
-
+		
+		
 	}
 	
 	public void clickOnXbutton() {
 		wait(3000);
-		driver.findElement(By.xpath("//*[@class='anticon anticon-close ant-modal-close-icon']")).click();
+		WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".anticon-close path")));
+		driver.findElement(By.cssSelector(".anticon-close path")).click();
 		System.out.println("Clicked on X button");
 	}
 
