@@ -209,6 +209,15 @@ public class ScheduleModuleAdmin extends Aulas_Base.BaseTest {
 		wait(3000);
 		currentTimeAndDate24();
 	}
+	
+@Test(priority = 10)
+	
+	public void basicNeedsToCrateSchedule() {
+		wait(3000);
+		SP.createStudent();
+		SP.createCourse();
+		SP.createNewClass();
+	}
 }
 	
 	

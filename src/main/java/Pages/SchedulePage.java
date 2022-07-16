@@ -4,6 +4,7 @@ import java.time.Duration;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Random;
+import java.util.UUID;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
@@ -781,7 +782,260 @@ Random generator=new Random();
 		
 		
 	}
+	/*****************************************************Enhanced way of writing coding
+	 * @return ***********************************/
 	
+	public String createStudent() {
+		wait(3000);
+		driver.findElement(By.xpath("//*[contains(@href,'/user-management')]")).click();
+		System.out.println("clicked on User Management...");
+		wait(3000);
+		driver.findElement(By.xpath("//*[@class='ant-btn ant-btn-primary']")).click();
+		System.out.println("clicked on Add User...");
+		
+		//fillStudentDetails();
+		String studentNamis=fillStudentDetails();
+		System.out.println("The created student name is :"+studentNamis);
+		return studentNamis;
+		
+		}
+	public String fillStudentDetails() {
+		//String name=returnStringValue();
+		String name=generateRandomName()+"TE";
+		System.out.println("The generated name is :"+name);
+		StringBuilder phoneNum=createRandomNumber();
+		System.out.println("The generated Phone number is :"+phoneNum);
+		wait(3000);
+		driver.findElement(By.xpath("(//span[@class='anticon anticon-right'])[1]")).click();
+		System.out.println("clicked on Student...");
+		wait(3000);
+		driver.findElement(By.xpath("//*[@placeholder='Enter name']")).sendKeys(name);
+		System.out.println("Entered Name is: ..."+name);
+		wait(3000);
+		driver.findElement(By.xpath("//*[@placeholder='Enter phone number']")).sendKeys("99"+phoneNum);
+		System.out.println("Entered Phone number is: ...99"+phoneNum);
+		wait(3000);
+		List<WebElement> ele=driver.findElements(By.xpath("//*[@class='ant-btn ant-btn-primary']"));
+		int size=ele.size();
+		System.out.println("The size is :"+size);
+			for(int i=1;i<=size;i++) {
+		
+		String all=driver.findElement(By.xpath("(//*[@class='ant-btn ant-btn-primary'])["+i+"]")).getText();
+		if(all.equalsIgnoreCase("ADD")) {
+			wait(3000);
+			driver.findElement(By.xpath("(//*[@class='ant-btn ant-btn-primary'])["+i+"]")).click();
+			System.out.println("Clicked on add button...");
+			break;
+		}
+		
+	}
+			return name;
+	}
+public String returnStringValue() {
+	String uuid = UUID.randomUUID().toString();
+	return uuid;
+}
+
+private StringBuilder  createRandomNumber(){
+	String captals = "1234567890";
+    Random rnd = new Random();
+    StringBuilder NewChaptername = new StringBuilder(8);
+    for (int n = 0; n < 8; n++)
+    {
+        NewChaptername.append(captals.charAt(rnd.nextInt(captals.length())));
+       
+    }
+  //return name2;
+	return NewChaptername;
 	
+  }
+
+public StringBuilder generateRandomName() {
+	String captals = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    Random rnd = new Random();
+    StringBuilder NewChaptername = new StringBuilder(7);
+    for (int n = 0; n < 7; n++)
+    {
+        NewChaptername.append(captals.charAt(rnd.nextInt(captals.length())));
+    }
+    return NewChaptername;
+	
+}
+
+public String createCourse() {
+	wait(3000);
+	driver.findElement(By.xpath("//*[contains(@href,'/course')]")).click();
+	System.out.println("clicked on course Module...");
+	wait(3000);
+	driver.findElement(By.xpath("//*[@class='ant-btn']")).click();
+	System.out.println("clicked on Add course...");
+	String courseName=generateRandomName()+"CN";
+	System.out.println("The generated name is :"+courseName);
+	wait(3000);
+	driver.findElement(By.xpath("//*[@placeholder='Enter Name']")).sendKeys(courseName);
+	System.out.println("Entered Name is: ..."+courseName);
+	wait(3000);
+	/*driver.findElement(By.xpath("//*[@placeholder='Enter Duration']")).sendKeys("KJ"+courseName);
+	System.out.println("Entered Name is: ..."+courseName);*/
+	 selectDuration("Day(s)");
+	 selectStartDateAndEndate();
+	 System.out.println("The created course name is :"+courseName);
+	 return courseName;
+	
+}
+public void selectDuration(String DMY) {
+	wait(3000);
+	driver.findElement(By.xpath("//*[@placeholder='Enter Duration']")).sendKeys("1");
+	System.out.println("Entered duration  is: ..."+"1 Day");
+	wait(3000);
+	driver.findElement(By.xpath("(//*[@class='ant-select-selector'])[1]")).click();
+	//System.out.println("Entered duration  is: ..."+"1 Day");
+	List<WebElement> ele=driver.findElements(By.xpath("//*[@class='ant-select-item-option-content']"));
+	int size=ele.size();
+	System.out.println("The size is :"+size);
+		for(int i=1;i<=size;i++) {
+	
+	String all=driver.findElement(By.xpath("(//*[@class='ant-select-item-option-content'])["+i+"]")).getText();
+	if(all.equalsIgnoreCase(DMY)) {
+		wait(3000);
+		driver.findElement(By.xpath("(//*[@class='ant-select-item-option-content'])["+i+"]")).click();
+		System.out.println("Clicked on "+DMY+"add button...");
+		break;
+	}
+}
+		
+}
+
+public void selectStartDateAndEndate() {
+	wait(3000);
+	//select start date
+	driver.findElement(By.xpath("(//*[@class='ant-picker datePicker'])[1]")).click();
+	System.out.println("Clicked on satrt date:");
+	wait(3000);
+	driver.findElement(By.xpath("//*[@class='ant-picker-today-btn']")).click();
+	System.out.println("Clicked on satrt date:");
+	List<WebElement> ele=driver.findElements(By.xpath("//*[@class='ant-btn']"));
+	int size=ele.size();
+	System.out.println("The size is :"+size);
+		for(int i=1;i<=size;i++) {
+	
+	String all=driver.findElement(By.xpath("(//*[@class='ant-btn'])["+i+"]")).getText();
+	if(all.equalsIgnoreCase("ADD")) {
+		wait(3000);
+		driver.findElement(By.xpath("(//*[@class='ant-btn'])["+i+"]")).click();
+		System.out.println("Clicked on ADD button...");
+		break;
+	}
+}
+		
+}
+public String createNewClass() {
+	wait(3000);
+	driver.findElement(By.xpath("//*[contains(@href,'/classroom')]")).click();
+	System.out.println("Clicked on classRoom:");
+	wait(3000);
+	driver.findElement(By.xpath("//*[@class='ant-btn ant-btn-primary btn-radius-15__height-38 m-l-20 text-xmd']")).click();
+	System.out.println("Clicked on Create New Button:");
+	//fillClassRoomDetails();
+	String classNameis=fillClassRoomDetails();
+	System.out.println("The created class name is :"+classNameis);
+	return classNameis;
+	
+}
+
+public String fillClassRoomDetails() {
+	wait(3000);
+	String className=generateRandomName()+"YH";
+	driver.findElement(By.xpath("(//*[@class='ant-input input-text-grey'])[1]")).sendKeys(className);
+	System.out.println("The entered class name is :"+className);
+	wait(3000);
+	driver.findElement(By.xpath("(//*[@class='ant-input input-text-grey'])[2]")).sendKeys("a,b");
+	System.out.println("The entered section name is a,b:");	
+	wait(3000);
+	driver.findElement(By.xpath("//*[@class='ant-select-selection-search-input']")).click();
+	System.out.println("The Cliked on search course:");	
+	String course=createCourse();
+	List<WebElement> ele=driver.findElements(By.xpath("//*[@class='ant-select-item-option-content']"));
+	int size=ele.size();
+	System.out.println("The size is :"+size);
+		for(int i=1;i<=size;i++) {
+	
+	String all=driver.findElement(By.xpath("(//*[@class='ant-select-item-option-content'])["+i+"]")).getText();
+	if(all.equalsIgnoreCase(course)) {
+		wait(3000);
+		driver.findElement(By.xpath("(//*[@class='ant-select-item-option-content'])["+i+"]")).click();
+		System.out.println("Clicked on "+course+" button...");
+		break;
+	}
+	
+		}
+		wait(3000);
+		driver.findElement(By.xpath("//*[@class='ant-btn ant-btn-primary btn-radius-15__height-38']")).click();
+		System.out.println("Clicked on create Button.");
+		return className;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }

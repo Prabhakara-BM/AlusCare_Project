@@ -1,5 +1,7 @@
 package Test;
 
+import java.awt.AWTException;
+
 import org.openqa.selenium.By;
 import org.testng.annotations.BeforeSuite;
 
@@ -526,6 +528,19 @@ public class UserManagementSuperAdminTest extends BaseTest {
 		UM.adminValidateViewMorePage();
 		
 	}*/
-
+	@Test(priority = 36)
+	public void uploadImage() throws InterruptedException {
+		wait(3000);
+		try {
+			UM.clickCameraToUpload();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (AWTException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
 	
 }

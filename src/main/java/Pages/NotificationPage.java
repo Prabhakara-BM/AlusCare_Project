@@ -1,8 +1,23 @@
 package Pages;
 
+import java.time.Duration;
+import java.util.Calendar;
+import java.util.List;
+import java.util.Random;
+import java.util.UUID;
+
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import io.opentelemetry.exporter.logging.SystemOutLogExporter;
 
 
 
@@ -62,5 +77,159 @@ public class NotificationPage extends Aulas_Base.BaseTest
 	    	 Close.click();
 	    	 Thread.sleep(2000);
 	   }
+	 /*****************************************************Notofication Module Teacher side*********************************/
+	  public void clickOnNotification() {
+		  wait(3000);
+		 WebElement ele= driver.findElement(By.xpath("//*[contains(@href,'/notifications-home')]"));
+		 scrollByElement(ele);
+		 wait(3000);
+		 ele.click();
+		 System.out.println("Cliked on :"+ele.getText());
+		   }
+	  
+	  public void clickAllNotifications() {
+		  wait(3000);
+		 WebElement allnotifi= driver.findElement(By.xpath("//*[@class='r-c-c-c']"));
+		 wait(3000);
+		 allnotifi.click();
+		 System.out.println("Clicked on :"+" "+allnotifi.getText());
+		 
+	  }
+	 public void numberOfBlocksInAllNotifications() {
+		 wait(3000);
+		boolean yes= driver.findElement(By.xpath("//*[@class='m-l-20  ']")).isDisplayed();
+		if(yes) {
+			List<WebElement> ele=driver.findElements(By.xpath("//*[@class='m-l-20  ']"));
+		
+		int size=ele.size();
+		System.out.println("The size is :"+size);
+		for(int i=1;i<=size;i++) {
+			String nameis=driver.findElement(By.xpath("(//*[@class='m-l-20  '])["+i+"]")).getText();
+			//System.out.println("The block names are :"+nameis);
+			wait(3000);
+			driver.findElement(By.xpath("(//*[@class='cursor-pointer'])["+i+"]")).click();
+			wait(3000);
+			//*[@class='anticon anticon-arrow-left']
+			driver.findElement(By.xpath("//*[@class='anticon anticon-arrow-left']")).click();
+			wait(3000);
+			
+			
+		}
+		
+		}
+		 if(!yes){
+		
+			System.out.println("There are no notifications popups in All Notifications sections...");
+		
+		}
+	 }
+		
+	 public void clickAllSelectOneByOne() {
+		 wait(3000);
+		 for(int i=1;i<=5;i++) {
+			 wait(3000);
+		driver.findElement(By.xpath("//*[@class='ant-select-selection-item']")).click();
+		 wait(3000);
+		 String nameIs=driver.findElement(By.xpath("(//*[@class='ant-select-item-option-content'])["+i+"]")).getText();
+		 driver.findElement(By.xpath("(//*[@class='ant-select-item-option-content'])["+i+"]")).click();
+		//String nameIs=driver.findElement(By.xpath("(//*[@class='ant-select-item-option-content'])["+i+"]")).getText();
+		 System.out.println("Clicked on the iteams names is :"+nameIs);
+	 }
+	  
+	 }
+	 public void clickOnAnnouncement() {
+		 wait(3000);
+		WebElement ele= driver.findElement(By.xpath("(//*[@class='r-c-c-c '])[1]"));
+		 wait(3000); 
+		 ele.click();
+		 System.out.println("Clicked on :"+ele.getText());
+	 }
+	 
+	 public void selectionOfLeftSideOptions(String Options) {
+		 wait(3000);
+		 List<WebElement> ele=driver.findElements(By.xpath("	"));
+			
+			int size=ele.size();
+			System.out.println("The size is :"+size);
+			for(int i=1;i<=size;i++) {
+				String nameis=driver.findElement(By.xpath("(//*[@class='r-c-c-c '])["+i+"]")).getText();
+				//System.out.println("The block names are :"+nameis);
+				if(nameis.equalsIgnoreCase(Options)) {
+					wait(3000);
+					driver.findElement(By.xpath("(//*[@class='r-c-c-c '])["+i+"]")).click();
+					System.out.println("The selected option is :"+Options);
+					break;
+				}
+			}
+		 
+	 }
+	 
+	 public void clickOnAssignments() {
+		 wait(3000);
+		WebElement ele= driver.findElement(By.xpath("(//*[@class='r-c-c-c '])[2]"));
+		 wait(3000); 
+		 ele.click();
+		 System.out.println("Clicked on :"+ele.getText());
+	 }
+	 public void clickOnTest() {
+		 wait(3000);
+		WebElement ele= driver.findElement(By.xpath("(//*[@class='r-c-c-c '])[3]"));
+		 wait(3000); 
+		 ele.click();
+		 System.out.println("Clicked on :"+ele.getText());
+	 }
+	 public void clickOnPractceTest() {
+		 wait(3000);
+		WebElement ele= driver.findElement(By.xpath("(//*[@class='r-c-c-c '])[4]"));
+		 wait(3000); 
+		 ele.click();
+		 System.out.println("Clicked on :"+ele.getText());
+	 }
+	 public void clickOnDigitalLibrery() {
+		 wait(3000);
+		WebElement ele= driver.findElement(By.xpath("(//*[@class='r-c-c-c '])[5]"));
+		 wait(3000); 
+		 ele.click();
+		 System.out.println("Clicked on :"+ele.getText());
+	 }
+	 public void clickOnOthers() {
+		 wait(3000);
+		WebElement ele= driver.findElement(By.xpath("(//*[@class='r-c-c-c '])[6]"));
+		 wait(3000); 
+		 ele.click();
+		 System.out.println("Clicked on :"+ele.getText());
+	 }
+	 
+	  
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
 	 
 }

@@ -1,6 +1,11 @@
 package Pages;
 
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
@@ -1563,9 +1568,83 @@ public class UserManagementPage extends BaseTest {
 		System.out.println("--------Emergency Details Updated -----");
 	}
 
+	public void clickCameraToUpload() throws InterruptedException, AWTException {
+		wait(3000);
+		
+		driver.findElement(By.xpath("//*[contains(@href,'/user-management')]")).click();
+		System.out.println("Clicked on User Management module...");
+		WebElement re=driver.findElement(By.xpath("//*[text()='Recently added user(s)']"));
+		scrollByElement(re);
+		wait(3000);
+		driver.findElement(By.xpath("(//*[@class='userCardStyle'])[1]")).click();
+		System.out.println("Clicked one of the usercard");
+		selectPhoto();
+		copyFileLocation();
+		
+		
+	}
+public void selectPhoto() {
+	wait(3000);
+	driver.findElement(By.xpath("//*[@class='anticon anticon-camera']")).click();
+	System.out.println("Clicked Camera...");
+	wait(3000);
+	List<WebElement> elements = driver.findElements(By.xpath("//*[@class='ant-btn']"));
+	int size = elements.size();
+	System.out.println("The size  is :" + size);
+	for (int i = 1; i < size; i++) {
+		String subjectName = driver
+				.findElement(By.xpath("(//*[@class='ant-btn'])[" + i + "]")).getText();
+		//System.out.println("The subject name is :" + " " + subjectName);
+		if (subjectName.equalsIgnoreCase("BROWSE PHOTO")) {
+			wait(3000);
+			driver.findElement(By.xpath("(//*[@class='ant-btn'])[" + i + "]")).click();
+			System.out.println("----The selection of subject  "+subjectName+" is successfull----");
+			break;
+		}
+}
+	
+}	
+
+public void copyFileLocation() throws InterruptedException, AWTException {
+	// File Location
+	StringSelection select = new StringSelection("C:\\Users\\Prabhakar\\Pictures\\Camera Roll\\BhanuPriya.PNG");
+	// Copy to clipboard
+	Toolkit.getDefaultToolkit().getSystemClipboard().setContents(select, null);
+	/*WebElement upload = driver.findElement(By.xpath("(//*[@class='ant-btn ant-btn-default'])[1]"));
+	upload.click();*/
+	Thread.sleep(6000);
+	// Create object of Robot class
+	Robot robot = new Robot();
+	Thread.sleep(1000);
+
+
+
+	// Press CTRL+V
+	robot.keyPress(KeyEvent.VK_CONTROL);
+	robot.keyPress(KeyEvent.VK_V);
+
+
+
+	// Wait
+	Thread.sleep(1000);
 	
 
-	
-	
 
+
+	// Release CTRL+V
+	robot.keyRelease(KeyEvent.VK_CONTROL);
+	robot.keyRelease(KeyEvent.VK_V);
+
+
+
+	// Wait
+	Thread.sleep(1000);
+	// Press Enter
+	robot.keyPress(KeyEvent.VK_ENTER);
+	robot.keyRelease(KeyEvent.VK_ENTER);
+	//driver.findElement(By.xpath("(//*[@class='ant-btn ant-btn-primary'])[2]")).click();
+	//Thread.sleep(4000);
+
+	System.out.println("---successfull upload---");
+}
 }

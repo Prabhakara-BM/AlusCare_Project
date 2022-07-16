@@ -1,21 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="9" total="10" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="8" passed="8" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-07-13T16:29:50 IST" name="Default suite" finished-at="2022-07-13T16:31:43 IST" duration-ms="113272">
+  <suite started-at="2022-07-15T16:42:51 IST" name="Default suite" finished-at="2022-07-15T16:50:29 IST" duration-ms="457799">
     <groups>
     </groups>
-    <test started-at="2022-07-13T16:29:50 IST" name="Default test" finished-at="2022-07-13T16:31:43 IST" duration-ms="113272">
-      <class name="Test.ScheduleModuleAdmin">
-        <test-method is-config="true" signature="setup()[pri:0, instance:Test.ScheduleModuleAdmin@26d9b808]" started-at="2022-07-13T16:29:22 IST" name="setup" finished-at="2022-07-13T16:29:50 IST" duration-ms="27594" status="PASS">
+    <test started-at="2022-07-15T16:42:51 IST" name="Default test" finished-at="2022-07-15T16:50:29 IST" duration-ms="457799">
+      <class name="Test.NotificationModuleTeacher">
+        <test-method is-config="true" signature="setup()[pri:0, instance:Test.NotificationModuleTeacher@2892d68]" started-at="2022-07-15T16:42:15 IST" name="setup" finished-at="2022-07-15T16:42:51 IST" duration-ms="35556" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="createScheduleProfile()[pri:0, instance:Test.ScheduleModuleAdmin@26d9b808]" started-at="2022-07-13T16:29:50 IST" name="createScheduleProfile" finished-at="2022-07-13T16:31:43 IST" duration-ms="113204" status="PASS">
+        <test-method signature="checkAllNotifiations()[pri:1, instance:Test.NotificationModuleTeacher@2892d68]" started-at="2022-07-15T16:42:51 IST" name="checkAllNotifiations" finished-at="2022-07-15T16:44:42 IST" duration-ms="111166" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- createScheduleProfile -->
-      </class> <!-- Test.ScheduleModuleAdmin -->
+        </test-method> <!-- checkAllNotifiations -->
+        <test-method signature="selectValuesIndropdown()[pri:2, instance:Test.NotificationModuleTeacher@2892d68]" started-at="2022-07-15T16:44:42 IST" name="selectValuesIndropdown" finished-at="2022-07-15T16:45:32 IST" duration-ms="49606" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectValuesIndropdown -->
+        <test-method signature="announcements()[pri:3, instance:Test.NotificationModuleTeacher@2892d68]" started-at="2022-07-15T16:45:32 IST" name="announcements" finished-at="2022-07-15T16:46:21 IST" duration-ms="49496" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- announcements -->
+        <test-method signature="assignments()[pri:4, instance:Test.NotificationModuleTeacher@2892d68]" started-at="2022-07-15T16:46:21 IST" name="assignments" finished-at="2022-07-15T16:47:10 IST" duration-ms="49427" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- assignments -->
+        <test-method signature="Test()[pri:5, instance:Test.NotificationModuleTeacher@2892d68]" started-at="2022-07-15T16:47:10 IST" name="Test" finished-at="2022-07-15T16:48:00 IST" duration-ms="49540" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Test -->
+        <test-method signature="practiceTest()[pri:6, instance:Test.NotificationModuleTeacher@2892d68]" started-at="2022-07-15T16:48:00 IST" name="practiceTest" finished-at="2022-07-15T16:48:50 IST" duration-ms="49527" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- practiceTest -->
+        <test-method signature="DigitalLibrery()[pri:7, instance:Test.NotificationModuleTeacher@2892d68]" started-at="2022-07-15T16:48:50 IST" name="DigitalLibrery" finished-at="2022-07-15T16:49:39 IST" duration-ms="49389" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- DigitalLibrery -->
+        <test-method signature="others()[pri:8, instance:Test.NotificationModuleTeacher@2892d68]" started-at="2022-07-15T16:49:39 IST" name="others" finished-at="2022-07-15T16:50:28 IST" duration-ms="49563" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- others -->
+      </class> <!-- Test.NotificationModuleTeacher -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
