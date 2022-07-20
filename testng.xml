@@ -3,38 +3,41 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
-    <!--   <class name="Test.NotificationModuleTeacher"/>
-        <class name="Test.TestModuleAdmin"/>
+      <class name="Test.NotificationModuleTeacher"/>
+      <class name="Test.NotificationModuleOperator"/>
+      <class name="Test.TestModuleAdmin"/>
       <class name="Test.feeManagementSuperAdminTest"/>
       <class name="Test.PracticeTestDataOperator"/>
+      <class name="Test.NotificationModuleDataOper"/>
       <class name="Test.TestModuleOperator"/>
       <class name="Test.operationFeeManager"/>
+      <class name="Test.DataOperatorAdminCoursesTest"/>
       <class name="Test.TestModuleStudentLogin"/>
       <class name="Test.PracticeTestStudent"/>
       <class name="Test.ScheduleModuleAdmin"/>
       <class name="Test.ScheduleModuleStudent"/>
       <class name="Test.UserManagementDataOpeSide"/>
       <class name="Test.DigitalLibraryTest"/>
+      <class name="Test.OperationsAdminCoursesTest"/>
       <class name="Test.ScheduleModuleDataOperator"/>
       <class name="Test.ScheduleModuleOperator"/>
       <class name="Test.PracticeTestAdmin"/>
       <class name="Test.RegistrationTest"/>
+      <class name="Test.TeacherAdminCoursesTest"/>
       <class name="Test.NotificationTest"/>
       <class name="Test.ClassroomsTest"/>
       <class name="Test.PracticetestSuperAdmin"/>
       <class name="Test.dataOperatorFeeManagerTest"/>
+      <class name="Test.SuperAdminCoursesTest"/>
       <class name="Test.ScheduleValidation"/>
       <class name="Test.PracticeTestTeacher"/>
       <class name="Test.teacherFeeManagerTest"/>
       <class name="Test.UserManagementOperatorSide"/>
       <class name="Test.UserManagementTeacherSide"/>
-      <class name="Test.CoursesTest"/>
       <class name="Test.ScheduleModuleTeacher"/>
       <class name="Test.TestModuleTeacher"/>
       <class name="Test.TestModuleDataOperator"/>
-      <class name="Test.UserManagementSuperAdminTest"/>  -->
       <class name="Test.UserManagementSuperAdminTest"/>
-      
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
