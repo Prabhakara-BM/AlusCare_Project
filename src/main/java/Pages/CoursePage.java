@@ -1,27 +1,29 @@
 package Pages;
 
 
+import java.util.Random;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 
+import Aulas_Base.BaseTest;
 
-
-public class CoursePage extends Aulas_Base.BaseTest
+public class CoursePage extends BaseTest
 {
-	@FindBy(xpath="(//ul[@class='ant-menu-item-group-list'])[1]/li[4]")
+	@FindBy(xpath="//a[@href ='/course']")
 	WebElement Course;
-	@FindBy(xpath="//button[@class='ant-btn']")
+	@FindBy(xpath="(//button[@class='ant-btn'])[1]")
 	WebElement AddCourse;
 	@FindBy(xpath="(//input[@class='ant-input'])[1]")
 	WebElement CourseName;
 	@FindBy(xpath="(//input[@class='ant-input'])[4]")
 	WebElement CourseDuration;
-	@FindBy(xpath="(//div[@class='ant-select-selector'])[1]")
+	@FindBy(xpath="//*[@class='ant-modal-body']/div/div[2]/div[2]/div[2]/div[2]/div/div")
 	WebElement CourseDurationIn;
 	@FindBy(xpath="//div[text()='Day(s)']")
 	WebElement CourseDurationInDays;
@@ -53,13 +55,13 @@ public class CoursePage extends Aulas_Base.BaseTest
 	WebElement QuarterlyPlan;
 	@FindBy(xpath="//div[text()='Half Yearly']")
 	WebElement HalfYearlyPlan;
-	@FindBy(xpath="//div[text()='Annually']")
+	@FindBy(xpath="(//div[text()='Annually'])[1]")
 	WebElement AnnuallyPlan;
-	@FindBy(xpath="(//div[text()='One time'])[2]")
+	@FindBy(xpath="(//div[text()='One time'])[1]")
 	WebElement OneTimePlan;
 	@FindBy(xpath="//div[text()='One time']")
 	WebElement OneTimePlan1;
-	@FindBy(xpath="//div[text()='Customize']")
+	@FindBy(xpath="(//div[text()='Customize'])[1]")
 	WebElement CustomizePlan;
 	@FindBy(xpath="(//input[@class='ant-input'])[5]")
 	WebElement FirstInstalment;
@@ -74,7 +76,7 @@ public class CoursePage extends Aulas_Base.BaseTest
 	//**************Deletecourse********************//
 	@FindBy(xpath="(//div[@class='box-shadow courseCardB'])[1]")
 	WebElement OpenCourse;
-	@FindBy(xpath="(//button[@class='ant-btn'])[2]")
+	@FindBy(xpath="(//*[text()='UPDATE'])[1]")
 	WebElement CourseUpdate;
 	@FindBy(xpath="//div[@class='ant-page-header-back-button']")
 	WebElement BackButton;
@@ -91,973 +93,214 @@ public class CoursePage extends Aulas_Base.BaseTest
 	@FindBy(xpath="(//button[@class='ant-btn'])[3]")
 	WebElement CourseDeleteNo;
 	
+	JavascriptExecutor js= (JavascriptExecutor)driver;
 	
 	public CoursePage()
 	{
 		PageFactory.initElements(driver, this);
 	}
-	
-	public void CourseModule() throws InterruptedException
-	{
-
-	// Year Monthly
-		Thread.sleep(2000);
-		Course.click();
-		Thread.sleep(2000);
-		AddCourse.click();
-		Thread.sleep(2000);
-		CourseName.sendKeys("Selenium Java Course");
-		Thread.sleep(2000);
-		CourseDuration.sendKeys("1");
-		Thread.sleep(2000);
-		CourseDurationIn.click();
-		Thread.sleep(2000);
-		CourseDurationInYears.click();
-		Thread.sleep(2000);
-		Description.sendKeys(" Selenium is a automated testing framework");
-		Thread.sleep(2000);
-		StartDate.click();
-		Thread.sleep(2000);
-		NextMonth.click();
-		Thread.sleep(2000);
-		Date1.click();
-		Thread.sleep(2000);
-		TotalCourseFee.sendKeys("20000");
-		Thread.sleep(2000);
-		JavascriptExecutor js= (JavascriptExecutor)driver;
-		Thread.sleep(1000);
-		WebElement CourseFeePlan1 = driver.findElement(By.xpath("//div[text()='Course Fee Plan']"));
-		Thread.sleep(1000);
-      	js.executeScript("arguments[0].scrollIntoView(true)", CourseFeePlan1);
-      	Thread.sleep(1000);
-		BillingPlan.click();
-		Thread.sleep(2000);
-		MonthlyPlan.click();
-		Thread.sleep(2000);
-		AddButton.click();
-		Thread.sleep(2000);
-	//Year QuarterlyPlan
-		AddCourse.click();
-		Thread.sleep(2000);
-		CourseName.sendKeys("Android Development");
-		Thread.sleep(2000);
-		CourseDuration.sendKeys("2");
-		Thread.sleep(2000);
-		CourseDurationIn.click();
-		Thread.sleep(2000);
-		CourseDurationInYears.click();
-		Thread.sleep(2000);
-		Description.sendKeys(" We make Building Software as Easy to Learning. Develop your Android App with No Coding.");
-		Thread.sleep(2000);
-		StartDate.click();
-		Thread.sleep(2000);
-		NextMonth.click();
-		Thread.sleep(2000);
-		Date1.click();
-		Thread.sleep(2000);
-		TotalCourseFee.sendKeys("20000");
-		Thread.sleep(2000);
-		WebElement CourseFeePlan2 = driver.findElement(By.xpath("//div[text()='Course Fee Plan']"));
-		Thread.sleep(1000);
-      	js.executeScript("arguments[0].scrollIntoView(true)", CourseFeePlan2);
-      	Thread.sleep(1000);
-		BillingPlan.click();
-		Thread.sleep(2000);
-		QuarterlyPlan.click();
-		Thread.sleep(2000);
-		AddButton.click();
-		Thread.sleep(2000);
-	// Year 	HalfYearlyPlan
-		AddCourse.click();
-		Thread.sleep(2000);
-		CourseName.sendKeys("IOS Development");
-		Thread.sleep(2000);
-		CourseDuration.sendKeys("3");
-		Thread.sleep(2000);
-		CourseDurationIn.click();
-		Thread.sleep(2000);
-		CourseDurationInYears.click();
-		Thread.sleep(2000);
-		Description.sendKeys(" We make Building Software as Easy to Learning.");
-		Thread.sleep(2000);
-		StartDate.click();
-		Thread.sleep(2000);
-		NextMonth.click();
-		Thread.sleep(2000);
-		Date1.click();
-		Thread.sleep(2000);
-		TotalCourseFee.sendKeys("20000");
-		Thread.sleep(2000);
-		WebElement CourseFeePlan3 = driver.findElement(By.xpath("//div[text()='Course Fee Plan']"));
-		Thread.sleep(1000);
-      	js.executeScript("arguments[0].scrollIntoView(true)", CourseFeePlan3);
-      	Thread.sleep(1000);
-		BillingPlan.click();
-		Thread.sleep(2000);
-		HalfYearlyPlan.click();
-		Thread.sleep(2000);
-		AddButton.click();
-		Thread.sleep(2000);
-	// Year AnnuallyPlan
-		AddCourse.click();
-		Thread.sleep(2000);
-		CourseName.sendKeys("Web Development");
-		Thread.sleep(2000);
-		CourseDuration.sendKeys("4");
-		Thread.sleep(2000);
-		CourseDurationIn.click();
-		Thread.sleep(2000);
-		CourseDurationInYears.click();
-		Thread.sleep(2000);
-		Description.sendKeys(" We make Building Software as Easy to Learning.");
-		Thread.sleep(2000);
-		StartDate.click();
-		Thread.sleep(2000);
-		NextMonth.click();
-		Thread.sleep(2000);
-		Date1.click();
-		Thread.sleep(2000);
-		TotalCourseFee.sendKeys("20000");
-		Thread.sleep(2000);
-		WebElement CourseFeePlan5 = driver.findElement(By.xpath("//div[text()='Course Fee Plan']"));
-		Thread.sleep(1000);
-      	js.executeScript("arguments[0].scrollIntoView(true)", CourseFeePlan5);
-      	Thread.sleep(1000);
-		BillingPlan.click();
-		Thread.sleep(2000);
-		AnnuallyPlan.click();
-		Thread.sleep(2000);
-		AddButton.click();
-		Thread.sleep(2000);
-	// Year One time Plan
-		AddCourse.click();
-		Thread.sleep(2000);
-		CourseName.sendKeys("JEE");
-		Thread.sleep(2000);
-		CourseDuration.sendKeys("1");
-		Thread.sleep(2000);
-		CourseDurationIn.click();
-		Thread.sleep(2000);
-		CourseDurationInYears.click();
-		Thread.sleep(2000);
-		Description.sendKeys(" We make Building Software as Easy to Learning.");
-		Thread.sleep(2000);
-		StartDate.click();
-		Thread.sleep(2000);
-		NextMonth.click();
-		Thread.sleep(2000);
-		Date1.click();
-		Thread.sleep(2000);
-		TotalCourseFee.sendKeys("20000");
-		Thread.sleep(2000);
-		WebElement CourseFeePlan6 = driver.findElement(By.xpath("//div[text()='Course Fee Plan']"));
-		Thread.sleep(1000);
-      	js.executeScript("arguments[0].scrollIntoView(true)", CourseFeePlan6);
-      	Thread.sleep(1000);
-		BillingPlan.click();
-		Thread.sleep(2000);
-		OneTimePlan1.click();
-		Thread.sleep(2000);
-		AddButton.click();
-		Thread.sleep(2000);
-	// Year  Customize
-		AddCourse.click();
-		Thread.sleep(2000);
-		CourseName.sendKeys("AZURE COURSE");
-		Thread.sleep(2000);
-		CourseDuration.sendKeys("1");
-		Thread.sleep(2000);
-		CourseDurationIn.click();
-		Thread.sleep(2000);
-		CourseDurationInMonths.click();
-		Thread.sleep(2000);
-		Description.sendKeys("  We make Building Software as Easy to Learning.");
-		Thread.sleep(2000);
-		StartDate.click();
-		Thread.sleep(2000);
-		NextMonth.click();
-		Thread.sleep(2000);
-		Date1.click();
-		Thread.sleep(2000);
-		TotalCourseFee.sendKeys("20000");
-		Thread.sleep(2000);
-		WebElement CourseFeePlan7 = driver.findElement(By.xpath("//div[text()='Course Fee Plan']"));
-		Thread.sleep(1000);
-      	js.executeScript("arguments[0].scrollIntoView(true)", CourseFeePlan7);
-      	Thread.sleep(2000);
-		BillingPlan.click();
-		Thread.sleep(2000);
-		CustomizePlan.click();
-		Thread.sleep(2000);
-		FirstInstalment.sendKeys("10000");
-		Thread.sleep(2000);
-		ADDINSTALLMENT.click();
-		Thread.sleep(2000);
-		SecondInstalment.sendKeys("10000");
-		Thread.sleep(2000);
-		AddButton.click();
-		Thread.sleep(2000);
-	// Month one time plan
-		AddCourse.click();
-		Thread.sleep(2000);
-		CourseName.sendKeys("Automation Testing");
-		Thread.sleep(2000);
-		CourseDuration.sendKeys("1");
-		Thread.sleep(2000);
-		CourseDurationIn.click();
-		Thread.sleep(2000);
-		CourseDurationInMonths.click();
-		Thread.sleep(2000);
-		Description.sendKeys("This automation test engineer training program is designed to provide you with a complete knowledge of software testing technologies such as Selenium Web Driver, TestNG, Maven, AutoIT, Selenium Grid, Appium, and Docker to help you build a robust testing framework.");
-		Thread.sleep(2000);
-		StartDate.click();
-		Thread.sleep(2000);
-		NextMonth.click();
-		Thread.sleep(2000);
-		Date1.click();
-		Thread.sleep(2000);
-		TotalCourseFee.sendKeys("20000");
-		Thread.sleep(2000);
-		WebElement CourseFeePlan8 = driver.findElement(By.xpath("//div[text()='Course Fee Plan']"));
-		Thread.sleep(1000);
-      	js.executeScript("arguments[0].scrollIntoView(true)", CourseFeePlan8);
-      	Thread.sleep(1000);
-		BillingPlan.click();
-		Thread.sleep(2000);
-		OneTimePlan.click();
-		Thread.sleep(2000);
-		AddButton.click();
-		Thread.sleep(2000);
-		Course.click();
-		Thread.sleep(2000);
-		AddCourse.click();
-		Thread.sleep(2000);
-		CancelButton.click();
-		Thread.sleep(2000);
-	// Month Customize
-		Thread.sleep(2000);
-		AddCourse.click();
-		Thread.sleep(2000);
-		CourseName.sendKeys("AZURE COURSE");
-		Thread.sleep(2000);
-		CourseDuration.sendKeys("1");
-		Thread.sleep(2000);
-		CourseDurationIn.click();
-		Thread.sleep(2000);
-		CourseDurationInMonths.click();
-		Thread.sleep(2000);
-		Description.sendKeys("  We make Building Software as Easy to Learning.");
-		Thread.sleep(2000);
-		StartDate.click();
-		Thread.sleep(2000);
-		NextMonth.click();
-		Thread.sleep(2000);
-		Date1.click();
-		Thread.sleep(2000);
-		TotalCourseFee.sendKeys("20000");
-		Thread.sleep(2000);
-		WebElement CourseFeePlan9 = driver.findElement(By.xpath("//div[text()='Course Fee Plan']"));
-		Thread.sleep(1000);
-      	js.executeScript("arguments[0].scrollIntoView(true)", CourseFeePlan9);
-      	Thread.sleep(2000);
-		BillingPlan.click();
-		Thread.sleep(2000);
-		CustomizePlan.click();
-		Thread.sleep(2000);
-		FirstInstalment.sendKeys("10000");
-		Thread.sleep(2000);
-		ADDINSTALLMENT.click();
-		Thread.sleep(2000);
-		SecondInstalment.sendKeys("10000");
-		Thread.sleep(2000);
-		AddButton.click();
-	// Day one time
-		Thread.sleep(2000);
-		AddCourse.click();
-		Thread.sleep(2000);
-		CourseName.sendKeys("GRAPHIC DESIGN");
-		Thread.sleep(2000);
-		CourseDuration.sendKeys("20");
-		Thread.sleep(2000);
-		CourseDurationIn.click();
-		Thread.sleep(2000);
-		CourseDurationInDays.click();
-		Thread.sleep(2000);
-		Description.sendKeys("  We make Building Software as Easy to Learning.");
-		Thread.sleep(2000);
-		StartDate.click();
-		Thread.sleep(2000);
-		NextMonth.click();
-		Thread.sleep(2000);
-		Date1.click();
-		Thread.sleep(2000);
-		TotalCourseFee.sendKeys("20000");
-		Thread.sleep(2000);
-		WebElement CourseFeePlan10 = driver.findElement(By.xpath("//div[text()='Course Fee Plan']"));
-		Thread.sleep(1000);
-      	js.executeScript("arguments[0].scrollIntoView(true)", CourseFeePlan10);
-      	Thread.sleep(2000);
-		BillingPlan.click();
-		Thread.sleep(2000);
-		OneTimePlan.click();
-		Thread.sleep(2000);
-		AddButton.click();
-	// Day customize
-		Thread.sleep(2000);
-		AddCourse.click();
-		Thread.sleep(2000);
-		CourseName.sendKeys("GRAPHIC DESIGN");
-		Thread.sleep(2000);
-		CourseDuration.sendKeys("20");
-		Thread.sleep(2000);
-		CourseDurationIn.click();
-		Thread.sleep(2000);
-		CourseDurationInDays.click();
-		Thread.sleep(2000);
-		Description.sendKeys("  We make Building Software as Easy to Learning.");
-		Thread.sleep(2000);
-		StartDate.click();
-		Thread.sleep(2000);
-		NextMonth.click();
-		Thread.sleep(2000);
-		Date1.click();
-		Thread.sleep(2000);
-		TotalCourseFee.sendKeys("20000");
-		Thread.sleep(2000);
-		WebElement CourseFeePlan11 = driver.findElement(By.xpath("//div[text()='Course Fee Plan']"));
-		Thread.sleep(1000);
-      	js.executeScript("arguments[0].scrollIntoView(true)", CourseFeePlan11);
-      	Thread.sleep(2000);
-		BillingPlan.click();
-		Thread.sleep(2000);
-		OneTimePlan.click();
-		Thread.sleep(2000);
-		AddButton.click();
-		Thread.sleep(2000);
-    // Search course
-		Course.click();
-		Thread.sleep(2000);
-		CourseSearch.sendKeys("Automation Testing");
-		Thread.sleep(2000);
-		CourseSearchButton.click();
-		Thread.sleep(2000);
-	// Course Update
-		Course.click();
-		Thread.sleep(2000);
-		OpenCourse.click();
-		Thread.sleep(2000);
-		CourseDurationIn.click();
-		Thread.sleep(2000);
-		CourseDurationInYears.click();
-		Thread.sleep(2000);
-		WebElement CourseFeePlan12 = driver.findElement(By.xpath("//div[text()='Course Fee Plan']"));
-		Thread.sleep(1000);
-      	js.executeScript("arguments[0].scrollIntoView(true)", CourseFeePlan12);
-      	Thread.sleep(2000);
-		BillingPlan.click();
-		Thread.sleep(2000);
-		MonthlyPlan.click();
-		Thread.sleep(2000);
-		CourseUpdate.click();
-		Thread.sleep(3000);
-	// Course Delete
-		Course.click();
-		Thread.sleep(3000);
-		OpenCourse.click();
-		Thread.sleep(1000);
-		CourseDelete.click();
-		Thread.sleep(2000);
-		CourseDeleteYes.click();
-		Thread.sleep(1000);
-		Course.click();
-		Thread.sleep(3000);
-		OpenCourse.click();
-		Thread.sleep(1000);
-		CourseDelete.click();
-		Thread.sleep(2000);
-		CourseDeleteNo.click();
-		Thread.sleep(1000);
-		Course.click();
-		Thread.sleep(3000);
-		OpenCourse.click();
-		Thread.sleep(1000);
-		CourseDelete.click();
-		Thread.sleep(2000);
-		CourseDeleteNo.click();
-		Thread.sleep(1000);
-	// Cancel Course
-		Course.click();
-		Thread.sleep(2000);
-		AddCourse.click();
-		Thread.sleep(2000);
-		CancelButton.click();
-		Thread.sleep(2000);
-	}
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	UserManagementPage UM=new UserManagementPage();
 	
 	public void ClickonCourse() throws InterruptedException
 	{
-		Thread.sleep(1000);
+		WaitTil(2000);
 		Course.click();
-		Thread.sleep(1000);
+		WaitTil(2000);
 
-	}
-	
-	
-	public void AddCourse() throws InterruptedException
-	{
-		Thread.sleep(2000);
-		Course.click();
-		Thread.sleep(2000);
-		AddCourse.click();
-		Thread.sleep(2000);
-		CourseName.sendKeys("Automation Testing");
-		Thread.sleep(2000);
-		CourseDuration.sendKeys("1");
-		Thread.sleep(2000);
-		CourseDurationIn.click();
-		Thread.sleep(2000);
-		CourseDurationInMonths.click();
-		Thread.sleep(2000);
-		Description.sendKeys("This automation test engineer training program is designed to provide you with a complete knowledge of software testing technologies such as Selenium Web Driver, TestNG, Maven, AutoIT, Selenium Grid, Appium, and Docker to help you build a robust testing framework.");
-		Thread.sleep(2000);
-		StartDate.click();
-		Thread.sleep(2000);
-		NextMonth.click();
-		Thread.sleep(2000);
-		Date1.click();
-		Thread.sleep(2000);
-		TotalCourseFee.sendKeys("20000");
-		Thread.sleep(2000);
-		JavascriptExecutor js= (JavascriptExecutor)driver;
-		Thread.sleep(1000);
-		WebElement CourseFeePlan = driver.findElement(By.xpath("//div[text()='Course Fee Plan']"));
-		Thread.sleep(1000);
-      	js.executeScript("arguments[0].scrollIntoView(true)", CourseFeePlan);
-      	Thread.sleep(1000);
-		BillingPlan.click();
-		Thread.sleep(2000);
-		OneTimePlan.click();
-		Thread.sleep(2000);
-		AddButton.click();
 	}
 	public void CancelCourse() throws InterruptedException
 	{
-		Thread.sleep(2000);
+		WaitTil(2000);
 		Course.click();
-		Thread.sleep(2000);
+		WaitTil(2000);
+		WaitTil(2000);
 		AddCourse.click();
-		Thread.sleep(2000);
+		WaitTil(2000);
 		CancelButton.click();
-		Thread.sleep(2000);
+		WaitTil(2000);
 		
 	}
-	public void AddCourseMonthlyPlanforYear() throws InterruptedException
-	{
-		Thread.sleep(2000);
-		Course.click();
-		Thread.sleep(2000);
-		AddCourse.click();
-		Thread.sleep(2000);
-		CourseName.sendKeys("Selenium Java Course");
-		Thread.sleep(2000);
-		CourseDuration.sendKeys("1");
-		Thread.sleep(2000);
-		CourseDurationIn.click();
-		Thread.sleep(2000);
-		CourseDurationInYears.click();
-		Thread.sleep(2000);
-		Description.sendKeys(" Selenium is a automated testing framework");
-		Thread.sleep(2000);
-		StartDate.click();
-		Thread.sleep(2000);
-		NextMonth.click();
-		Thread.sleep(2000);
-		Date1.click();
-		Thread.sleep(2000);
-		TotalCourseFee.sendKeys("20000");
-		Thread.sleep(2000);
-		JavascriptExecutor js= (JavascriptExecutor)driver;
-		Thread.sleep(1000);
-		WebElement CourseFeePlan = driver.findElement(By.xpath("//div[text()='Course Fee Plan']"));
-		Thread.sleep(1000);
-      	js.executeScript("arguments[0].scrollIntoView(true)", CourseFeePlan);
-      	Thread.sleep(1000);
-		BillingPlan.click();
-		Thread.sleep(2000);
-		MonthlyPlan.click();
-		Thread.sleep(2000);
-		AddButton.click();
-	}
-	public void AddCourseQuarterlyPlanforYear() throws InterruptedException
-	{
-		Thread.sleep(2000);
-		Course.click();
-		Thread.sleep(2000);
-		AddCourse.click();
-		Thread.sleep(2000);
-		CourseName.sendKeys("Android Development");
-		Thread.sleep(2000);
-		CourseDuration.sendKeys("2");
-		Thread.sleep(2000);
-		CourseDurationIn.click();
-		Thread.sleep(2000);
-		CourseDurationInYears.click();
-		Thread.sleep(2000);
-		Description.sendKeys(" We make Building Software as Easy to Learning. Develop your Android App with No Coding.");
-		Thread.sleep(2000);
-		StartDate.click();
-		Thread.sleep(2000);
-		NextMonth.click();
-		Thread.sleep(2000);
-		Date1.click();
-		Thread.sleep(2000);
-		TotalCourseFee.sendKeys("20000");
-		Thread.sleep(2000);
-		JavascriptExecutor js= (JavascriptExecutor)driver;
-		Thread.sleep(1000);
-		WebElement CourseFeePlan = driver.findElement(By.xpath("//div[text()='Course Fee Plan']"));
-		Thread.sleep(1000);
-      	js.executeScript("arguments[0].scrollIntoView(true)", CourseFeePlan);
-      	Thread.sleep(1000);
-		BillingPlan.click();
-		Thread.sleep(2000);
-		QuarterlyPlan.click();
-		Thread.sleep(2000);
-		AddButton.click();
-	}
-	public void AddCourseHalfYearlyPlanforYear() throws InterruptedException
-	{
-		Thread.sleep(2000);
-		Course.click();
-		Thread.sleep(2000);
-		AddCourse.click();
-		Thread.sleep(2000);
-		CourseName.sendKeys("IOS Development");
-		Thread.sleep(2000);
-		CourseDuration.sendKeys("3");
-		Thread.sleep(2000);
-		CourseDurationIn.click();
-		Thread.sleep(2000);
-		CourseDurationInYears.click();
-		Thread.sleep(2000);
-		Description.sendKeys(" We make Building Software as Easy to Learning.");
-		Thread.sleep(2000);
-		StartDate.click();
-		Thread.sleep(2000);
-		NextMonth.click();
-		Thread.sleep(2000);
-		Date1.click();
-		Thread.sleep(2000);
-		TotalCourseFee.sendKeys("20000");
-		Thread.sleep(2000);
-		JavascriptExecutor js= (JavascriptExecutor)driver;
-		Thread.sleep(1000);
-		WebElement CourseFeePlan = driver.findElement(By.xpath("//div[text()='Course Fee Plan']"));
-		Thread.sleep(1000);
-      	js.executeScript("arguments[0].scrollIntoView(true)", CourseFeePlan);
-      	Thread.sleep(1000);
-		BillingPlan.click();
-		Thread.sleep(2000);
-		HalfYearlyPlan.click();
-		Thread.sleep(2000);
-		AddButton.click();
-	}
-	public void AddCourseAnnuallyPlanforYear() throws InterruptedException
-	{
-		Thread.sleep(2000);
-		Course.click();
-		Thread.sleep(2000);
-		AddCourse.click();
-		Thread.sleep(2000);
-		CourseName.sendKeys("Web Development");
-		Thread.sleep(2000);
-		CourseDuration.sendKeys("4");
-		Thread.sleep(2000);
-		CourseDurationIn.click();
-		Thread.sleep(2000);
-		CourseDurationInYears.click();
-		Thread.sleep(2000);
-		Description.sendKeys(" We make Building Software as Easy to Learning.");
-		Thread.sleep(2000);
-		StartDate.click();
-		Thread.sleep(2000);
-		NextMonth.click();
-		Thread.sleep(2000);
-		Date1.click();
-		Thread.sleep(2000);
-		TotalCourseFee.sendKeys("20000");
-		Thread.sleep(2000);
-		JavascriptExecutor js= (JavascriptExecutor)driver;
-		Thread.sleep(1000);
-		WebElement CourseFeePlan = driver.findElement(By.xpath("//div[text()='Course Fee Plan']"));
-		Thread.sleep(1000);
-      	js.executeScript("arguments[0].scrollIntoView(true)", CourseFeePlan);
-      	Thread.sleep(1000);
-		BillingPlan.click();
-		Thread.sleep(2000);
-		AnnuallyPlan.click();
-		Thread.sleep(2000);
-		AddButton.click();
-	}
-	public void AddCourseOneTimePlanforYear() throws InterruptedException
-	{
-		Thread.sleep(2000);
-		Course.click();
-		Thread.sleep(2000);
-		AddCourse.click();
-		Thread.sleep(2000);
-		CourseName.sendKeys("JEE");
-		Thread.sleep(2000);
-		CourseDuration.sendKeys("1");
-		Thread.sleep(2000);
-		CourseDurationIn.click();
-		Thread.sleep(2000);
-		CourseDurationInYears.click();
-		Thread.sleep(2000);
-		Description.sendKeys(" We make Building Software as Easy to Learning.");
-		Thread.sleep(2000);
-		StartDate.click();
-		Thread.sleep(2000);
-		NextMonth.click();
-		Thread.sleep(2000);
-		Date1.click();
-		Thread.sleep(2000);
-		TotalCourseFee.sendKeys("20000");
-		Thread.sleep(2000);
-		JavascriptExecutor js= (JavascriptExecutor)driver;
-		Thread.sleep(1000);
-		WebElement CourseFeePlan = driver.findElement(By.xpath("//div[text()='Course Fee Plan']"));
-		Thread.sleep(1000);
-      	js.executeScript("arguments[0].scrollIntoView(true)", CourseFeePlan);
-      	Thread.sleep(1000);
-		BillingPlan.click();
-		Thread.sleep(2000);
-		OneTimePlan1.click();
-		Thread.sleep(2000);
-		AddButton.click();
-	}
-	public void AddCourseCustomizePlanforYear() throws InterruptedException
-	{
-		Thread.sleep(2000);
-		Course.click();
-		Thread.sleep(2000);
-		AddCourse.click();
-		Thread.sleep(2000);
-		CourseName.sendKeys("NEET");
-		Thread.sleep(2000);
-		CourseDuration.sendKeys("2");
-		Thread.sleep(2000);
-		CourseDurationIn.click();
-		Thread.sleep(2000);
-		CourseDurationInYears.click();
-		Thread.sleep(2000);
-		Description.sendKeys("  We make Building Software as Easy to Learning.");
-		Thread.sleep(2000);
-		StartDate.click();
-		Thread.sleep(2000);
-		NextMonth.click();
-		Thread.sleep(2000);
-		Date1.click();
-		Thread.sleep(2000);
-		TotalCourseFee.sendKeys("20000");
-		Thread.sleep(2000);
-		JavascriptExecutor js= (JavascriptExecutor)driver;
-		Thread.sleep(1000);
-		WebElement CourseFeePlan = driver.findElement(By.xpath("//div[text()='Course Fee Plan']"));
-		Thread.sleep(1000);
-      	js.executeScript("arguments[0].scrollIntoView(true)", CourseFeePlan);
-      	Thread.sleep(1000);
-		BillingPlan.click();
-		Thread.sleep(2000);
-		CustomizePlan.click();
-		Thread.sleep(2000);
-		FirstInstalment.sendKeys("10000");
-		Thread.sleep(2000);
-		ADDINSTALLMENT.click();
-		Thread.sleep(2000);
-		SecondInstalment.sendKeys("10000");
-		Thread.sleep(2000);
-		AddButton.click();
-	}
-	public void AddCourseOneTimePlanforMonth() throws InterruptedException
-	{
-		Thread.sleep(2000);
-		Course.click();
-		Thread.sleep(2000);
-		AddCourse.click();
-		Thread.sleep(2000);
-		CourseName.sendKeys("AWS COURSE");
-		Thread.sleep(2000);
-		CourseDuration.sendKeys("2");
-		Thread.sleep(2000);
-		CourseDurationIn.click();
-		Thread.sleep(2000);
-		CourseDurationInMonths.click();
-		Thread.sleep(2000);
-		Description.sendKeys(" We make Building Software as Easy to Learning.");
-		Thread.sleep(2000);
-		StartDate.click();
-		Thread.sleep(2000);
-		NextMonth.click();
-		Thread.sleep(2000);
-		Date1.click();
-		Thread.sleep(2000);
-		TotalCourseFee.sendKeys("20000");
-		Thread.sleep(2000);
-		JavascriptExecutor js= (JavascriptExecutor)driver;
-		Thread.sleep(1000);
-		WebElement CourseFeePlan = driver.findElement(By.xpath("//div[text()='Course Fee Plan']"));
-		Thread.sleep(1000);
-      	js.executeScript("arguments[0].scrollIntoView(true)", CourseFeePlan);
-      	Thread.sleep(2000);
-		BillingPlan.click();
-		Thread.sleep(4000);
-		OneTimePlan1.click();
-		//driver.findElement(By.xpath("(//div[@class='ant-select-item-option-content'])[5]")).click();
-		Thread.sleep(4000);
-		AddButton.click();
-	}
-	public void AddCourseCustomizePlanforMonth() throws InterruptedException
-	{
-		Thread.sleep(2000);
-		Course.click();
-		Thread.sleep(2000);
-		AddCourse.click();
-		Thread.sleep(2000);
-		CourseName.sendKeys("AZURE COURSE");
-		Thread.sleep(2000);
-		CourseDuration.sendKeys("1");
-		Thread.sleep(2000);
-		CourseDurationIn.click();
-		Thread.sleep(2000);
-		CourseDurationInMonths.click();
-		Thread.sleep(2000);
-		Description.sendKeys("  We make Building Software as Easy to Learning.");
-		Thread.sleep(2000);
-		StartDate.click();
-		Thread.sleep(2000);
-		NextMonth.click();
-		Thread.sleep(2000);
-		Date1.click();
-		Thread.sleep(2000);
-		TotalCourseFee.sendKeys("20000");
-		Thread.sleep(2000);
-		JavascriptExecutor js= (JavascriptExecutor)driver;
-		Thread.sleep(1000);
-		WebElement CourseFeePlan = driver.findElement(By.xpath("//div[text()='Course Fee Plan']"));
-		Thread.sleep(1000);
-      	js.executeScript("arguments[0].scrollIntoView(true)", CourseFeePlan);
-      	Thread.sleep(2000);
-		BillingPlan.click();
-		Thread.sleep(2000);
-		CustomizePlan.click();
-		Thread.sleep(2000);
-		FirstInstalment.sendKeys("10000");
-		Thread.sleep(2000);
-		ADDINSTALLMENT.click();
-		Thread.sleep(2000);
-		SecondInstalment.sendKeys("10000");
-		Thread.sleep(2000);
-		AddButton.click();
-	}
-	public void AddCourseOneTimePlanforDay() throws InterruptedException
-	{
-		Thread.sleep(2000);
-		Course.click();
-		Thread.sleep(2000);
-		AddCourse.click();
-		Thread.sleep(2000);
-		CourseName.sendKeys("GRAPHIC DESIGN");
-		Thread.sleep(2000);
-		CourseDuration.sendKeys("20");
-		Thread.sleep(2000);
-		CourseDurationIn.click();
-		Thread.sleep(2000);
-		CourseDurationInDays.click();
-		Thread.sleep(2000);
-		Description.sendKeys("  We make Building Software as Easy to Learning.");
-		Thread.sleep(2000);
-		StartDate.click();
-		Thread.sleep(2000);
-		NextMonth.click();
-		Thread.sleep(2000);
-		Date1.click();
-		Thread.sleep(2000);
-		TotalCourseFee.sendKeys("20000");
-		Thread.sleep(2000);
-		JavascriptExecutor js= (JavascriptExecutor)driver;
-		Thread.sleep(1000);
-		WebElement CourseFeePlan = driver.findElement(By.xpath("//div[text()='Course Fee Plan']"));
-		Thread.sleep(1000);
-      	js.executeScript("arguments[0].scrollIntoView(true)", CourseFeePlan);
-      	Thread.sleep(2000);
-		BillingPlan.click();
-		Thread.sleep(2000);
-		OneTimePlan.click();
-		Thread.sleep(2000);
-		AddButton.click();
-	}
-	public void AddCourseCustomizePlanforDay() throws InterruptedException
-	{
-		Thread.sleep(2000);
-		Course.click();
-		Thread.sleep(2000);
-		AddCourse.click();
-		Thread.sleep(2000);
-		CourseName.sendKeys("DRAWING COURSE");
-		Thread.sleep(2000);
-		CourseDuration.sendKeys("25");
-		Thread.sleep(2000);
-		CourseDurationIn.click();
-		Thread.sleep(2000);
-		CourseDurationInDays.click();
-		Thread.sleep(2000);
-		Description.sendKeys(" We make Building Software as Easy to Learning.");
-		Thread.sleep(2000);
-		StartDate.click();
-		Thread.sleep(2000);
-		NextMonth.click();
-		Thread.sleep(2000);
-		Date1.click();
-		Thread.sleep(2000);
-		TotalCourseFee.sendKeys("20000");
-		Thread.sleep(2000);
-		JavascriptExecutor js= (JavascriptExecutor)driver;
-		Thread.sleep(1000);
-		WebElement CourseFeePlan = driver.findElement(By.xpath("//div[text()='Course Fee Plan']"));
-		Thread.sleep(1000);
-      	js.executeScript("arguments[0].scrollIntoView(true)", CourseFeePlan);
-      	Thread.sleep(2000);
-		BillingPlan.click();
-		Thread.sleep(2000);
-		CustomizePlan.click();
-		Thread.sleep(2000);
-		FirstInstalment.sendKeys("10000");
-		Thread.sleep(2000);
-		ADDINSTALLMENT.click();
-		Thread.sleep(2000);
-		SecondInstalment.sendKeys("10000");
-		Thread.sleep(2000);
-		AddButton.click();
-	}
+	 public void CourseCreation() throws InterruptedException
+	    {
+			AddCourse.click();
+			WaitTil(2000);
+			String captals = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+					Random rnd = new Random();
+					StringBuilder name = new StringBuilder(8);
+					for (int n = 0; n < 8; n++)
+					{
+						name.append(captals.charAt(rnd.nextInt(captals.length())));
+					}
+			CourseName.sendKeys(name);
+			WaitTil(2000);
+			String captals1 = "123456789";
+					Random rnd1 = new Random();
+					StringBuilder Duration = new StringBuilder(2);
+					for (int n = 0; n < 2; n++)
+					{
+						Duration.append(captals1.charAt(rnd1.nextInt(captals1.length())));
+					}
+			CourseDuration.sendKeys(Duration);
+			WaitTil(2000);
+    		CourseDurationIn.click();
+    		WaitTil(2000);
+    		CourseDurationInMonths.click();
+    		WaitTil(2000);
+			StringBuilder Des = new StringBuilder(15);
+			for (int n = 0; n < 15; n++)
+			{
+				Des.append(captals.charAt(rnd.nextInt(captals.length())));
+			}
+			Description.sendKeys(Des);
+			WaitTil(2000);
+			StartDate.click();
+			WaitTil(2000);
+			NextMonth.click();
+			WaitTil(2000);
+			Date1.click();
+			WaitTil(2000);
+			StringBuilder Fee = new StringBuilder(5);
+			for (int n = 0; n < 5; n++)
+			{
+				Fee.append(captals1.charAt(rnd1.nextInt(captals1.length())));
+			}
+			TotalCourseFee.sendKeys(Fee);
+			WaitTil(2000);
+			WebElement Billingplan = driver.findElement(By.xpath("//*[text()='Billing plan']"));
+			js.executeScript("arguments[0].scrollIntoView(true)", Billingplan);
+			WaitTil(2000);
+			BillingPlan.click();
+			WaitTil(2000);
+			CustomizePlan.click();
+			WaitTil(2000);
+			StringBuilder Fee1 = new StringBuilder(3);
+			for (int n = 0; n < 3; n++) {
+				Fee1.append(captals1.charAt(rnd1.nextInt(captals1.length())));
+			}
+			FirstInstalment.sendKeys(Fee1);
+			WaitTil(2000);
+			ADDINSTALLMENT.click();
+			WaitTil(2000);
+			SecondInstalment.sendKeys(Fee1);
+			WaitTil(2000);
+			AddButton.click();
+			WaitTil(2000);
+			UM.popupContent();
+			
+	    	}
+
 	
 	public void SearchCourse() throws InterruptedException
 	{
-		Thread.sleep(2000);
+		WaitTil(2000);
 		Course.click();
-		Thread.sleep(2000);
-		CourseSearch.sendKeys("Automation Testing");
-		Thread.sleep(2000);
+		WaitTil(2000);
+		String captals = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+		Random rnd = new Random();
+		StringBuilder name = new StringBuilder(8);
+		for (int n = 0; n < 8; n++)
+		{
+			name.append(captals.charAt(rnd.nextInt(captals.length())));
+		}
+		WaitTil(2000);
+		CourseSearch.sendKeys(name);
+		WaitTil(2000);
 		CourseSearchButton.click();
-		Thread.sleep(2000);
+		WaitTil(2000);
 		
 	}
 	
 	public void CourseUpdate() throws InterruptedException
 	{
-		Thread.sleep(2000);
+		WaitTil(2000);
 		Course.click();
-		Thread.sleep(2000);
+		WaitTil(2000);
 		OpenCourse.click();
-		Thread.sleep(2000);
+		WaitTil(2000);
+		String captals = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+				Random rnd = new Random();
+				StringBuilder name = new StringBuilder(8);
+				for (int n = 0; n < 8; n++)
+				{
+					name.append(captals.charAt(rnd.nextInt(captals.length())));
+				}
+	    WebElement CourseName1=CourseName;
+	    CourseName1.sendKeys(Keys.chord(Keys.CONTROL, "a"));
+	    CourseName1.sendKeys(Keys.DELETE);
+	    WaitTil(2000);
+		CourseName1.sendKeys(name);
+		WaitTil(2000);
+		String captals1 = "123456789";
+				Random rnd1 = new Random();
+				StringBuilder Duration = new StringBuilder(2);
+				for (int n = 0; n < 2; n++)
+				{
+					Duration.append(captals1.charAt(rnd1.nextInt(captals1.length())));
+				}
+	    WebElement CourseDuration1=CourseDuration;
+	    CourseDuration1.sendKeys(Keys.chord(Keys.CONTROL, "a"));
+	    CourseDuration1.sendKeys(Keys.DELETE);
+		WaitTil(2000);	
+		CourseDuration1.sendKeys(Duration);
+		WaitTil(2000);
+		StringBuilder Des = new StringBuilder(15);
+		for (int n = 0; n < 15; n++)
+		{
+			Des.append(captals.charAt(rnd.nextInt(captals.length())));
+		}
+		Description.sendKeys(Des);
+		WaitTil(2000);
+		/*
 		CourseDurationIn.click();
-		Thread.sleep(2000);
+		WaitTil(2000);
 		CourseDurationInYears.click();
-		Thread.sleep(2000);
+		WaitTil(2000);
 		JavascriptExecutor js= (JavascriptExecutor)driver;
-		Thread.sleep(1000);
 		WebElement CourseFeePlan = driver.findElement(By.xpath("//div[text()='Course Fee Plan']"));
-		Thread.sleep(1000);
       	js.executeScript("arguments[0].scrollIntoView(true)", CourseFeePlan);
-      	Thread.sleep(2000);
+      	WaitTil(2000);
 		BillingPlan.click();
-		Thread.sleep(2000);
+		WaitTil(2000);
 		MonthlyPlan.click();
-		Thread.sleep(2000);
-		CourseUpdate.click();
-		Thread.sleep(3000);
-		
-	}
-	public void CourseDeleteYes() throws InterruptedException
-	{
-		Thread.sleep(2000);
-		Course.click();
-		Thread.sleep(3000);
-		OpenCourse.click();
-		Thread.sleep(1000);
-		CourseDelete.click();
-		Thread.sleep(2000);
-		CourseDeleteYes.click();
-		Thread.sleep(1000);
-	}
-	public void CourseDeleteNo() throws InterruptedException
-	{
-		Thread.sleep(2000);
-		Course.click();
-		Thread.sleep(3000);
-		OpenCourse.click();
-		Thread.sleep(1000);
-		CourseDelete.click();
-		Thread.sleep(2000);
-		CourseDeleteNo.click();
-		Thread.sleep(1000);
-	}
-	public void CourseBack() throws InterruptedException
-	{
-		Thread.sleep(2000);
-		Course.click();
-		Thread.sleep(3000);
-		OpenCourse.click();
-		Thread.sleep(1000);
-		CourseDelete.click();
-		Thread.sleep(2000);
-		CourseDeleteNo.click();
-		Thread.sleep(1000);
-	}
-	
-	/*
-	public void addCourse(String name) {
-		
-		driver.findElement(By.xpath("//input[@class='ant-input']")).sendKeys(name);
-		Thread.sleep(2000);		
-	}
-	
-	
-	public void alretHandles() {
-		try{
-			   //Wait 10 seconds till alert is present
-			WebDriver driver = new ChromeDriver()
-			   WebDriverWait wait = new WebDriverWait(driver,10);
-			   Alert alert = wait.until(ExpectedConditions.alertIsPresent());
-
-			   //Accepting alert.
-			   alert.accept();
-			   System.out.println("Accepted the alert successfully.");
-			}catch(Throwable e){
-			   System.err.println("Error came while waiting for the alert popup. "+e.getMessage());
-			}
+		WaitTil(2000);
 		*/
+		CourseUpdate.click();
+		WaitTil(2000);
+		WebElement messagElement = driver.findElement(By.xpath("//div[@class='ant-notification-notice-content']"));
+		String act = messagElement.getText();
+		System.out.println("The actual text is:" + act);
+		WaitTil(2000);
+		
+	}
+	public void CourseDelete() throws InterruptedException
+	{
+		WaitTil(2000);
+		Course.click();
+		WaitTil(2000);
+		OpenCourse.click();
+		WaitTil(2000);
+		CourseDelete.click();
+		WaitTil(2000);
+		CourseDeleteNo.click();
+		WaitTil(2000);
+		CourseDelete.click();
+		WaitTil(2000);
+		CourseDeleteYes.click();
+		WaitTil(2000);
+		WebElement messagElement = driver.findElement(By.xpath("//div[@class='ant-notification-notice-content']"));
+		String act = messagElement.getText();
+		System.out.println("The actual text is:" + act);
+		WaitTil(2000);
+	}
+
+	
+	
+	
+	
+	
 	}
 	
-	//}
+	
 
 		
 	

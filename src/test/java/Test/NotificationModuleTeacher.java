@@ -39,6 +39,8 @@ public class NotificationModuleTeacher extends Aulas_Base.BaseTest {
 		SP = new SchedulePage();
 		NP=new NotificationPage();
 		HP = LC.newLoginUsingMobile(prop.getProperty("Np"), prop.getProperty("OTP"));
+		
+
 
 		/*
 		 * JavascriptExecutor js= (JavascriptExecutor)driver; Thread.sleep(1000);

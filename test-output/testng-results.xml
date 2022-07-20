@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="7" total="8" passed="1" failed="0" skipped="0">
+<testng-results ignored="8" total="9" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-07-16T12:22:27 IST" name="Default suite" finished-at="2022-07-16T12:24:18 IST" duration-ms="111407">
+  <suite started-at="2022-07-20T15:41:32 IST" name="Default suite" finished-at="2022-07-20T15:41:45 IST" duration-ms="12714">
     <groups>
     </groups>
-    <test started-at="2022-07-16T12:22:27 IST" name="Default test" finished-at="2022-07-16T12:24:18 IST" duration-ms="111407">
-      <class name="Test.NotificationModuleTeacher">
-        <test-method is-config="true" signature="setup()[pri:0, instance:Test.NotificationModuleTeacher@298a5e20]" started-at="2022-07-16T12:21:49 IST" name="setup" finished-at="2022-07-16T12:22:27 IST" duration-ms="38310" status="PASS">
+    <test started-at="2022-07-20T15:41:32 IST" name="Default test" finished-at="2022-07-20T15:41:45 IST" duration-ms="12714">
+      <class name="Test.NotificationModuleDataOper">
+        <test-method is-config="true" signature="setup()[pri:0, instance:Test.NotificationModuleDataOper@173ed316]" started-at="2022-07-20T15:40:55 IST" name="setup" finished-at="2022-07-20T15:41:32 IST" duration-ms="36863" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="checkAllNotifiations()[pri:1, instance:Test.NotificationModuleTeacher@298a5e20]" started-at="2022-07-16T12:22:27 IST" name="checkAllNotifiations" finished-at="2022-07-16T12:24:18 IST" duration-ms="111357" status="PASS">
+        <test-method signature="SearchOneMore()[pri:9, instance:Test.NotificationModuleDataOper@173ed316]" started-at="2022-07-20T15:41:32 IST" name="SearchOneMore" finished-at="2022-07-20T15:41:45 IST" duration-ms="12660" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- checkAllNotifiations -->
-      </class> <!-- Test.NotificationModuleTeacher -->
+        </test-method> <!-- SearchOneMore -->
+      </class> <!-- Test.NotificationModuleDataOper -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

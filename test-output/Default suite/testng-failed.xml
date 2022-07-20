@@ -3,12 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Test.NotificationModuleTeacher">
+      <class name="Test.NotificationModuleOperator">
         <methods>
-          <include name="announcements"/>
           <include name="setup"/>
+          <include name="DigitalLibrery"/>
+          <include name="others"/>
+          <include name="windowHandles"/>
         </methods>
-      </class> <!-- Test.NotificationModuleTeacher -->
+      </class> <!-- Test.NotificationModuleOperator -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

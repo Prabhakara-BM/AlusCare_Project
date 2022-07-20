@@ -1,6 +1,8 @@
 package Pages;
 
+import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -188,36 +190,108 @@ public class NotificationPage extends Aulas_Base.BaseTest
 		 System.out.println("Clicked on :"+ele.getText());
 	 }
 	 
-	  
+	/******************************************Data Operator***************/
+	 public void clickOnOthersInDataOper() {
+		 wait(3000);
+		WebElement ele= driver.findElement(By.xpath("(//*[@class='r-c-c-c '])[5]"));
+		 wait(3000); 
+		 ele.click();
+		 System.out.println("Clicked on :"+ele.getText());
+	 }
 	 
 	 
+	public void clickOnAlusCare() {
+		wait(3000);
+		WebElement alusCare=driver.findElement(By.xpath("//*[contains(@href,'/care')]"));
+		scrollByElement(alusCare);
+		wait(3000);
+		alusCare.click();
+		System.out.println("Clicked on :"+alusCare.getText());
+	}
 	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
+	public void covid19resources() {
+		wait(3000);
+		//WebElement covidResource=driver.findElement(By.xpath("//*[text()='Covid-19 resources']"));
+		/*WebElement covidResource=driver.findElement(By.xpath("//*[@class='careCard ']"));
+		wait(3000);
+		covidResource.click();
+		System.out.println("Clicked on :"+covidResource.getText());*/
+		String xpath="//*[@class='careCard ']";
+		
+		driver.findElement(By.xpath(xpath)).click();
+		//page has been refreshed. Now create a new element and work on it
+		//driver.findElement(By.xpath(xpath)).click();   //This works
+		
+	}
+	public void findVaccinationCenter() {
+		wait(3000);
+		WebElement vaccinationCenter=driver.findElement(By.xpath("//*[text()='FIND A VACCINATION CENTER']"));
+		vaccinationCenter.click();
+		System.out.println("Clicked on vaccination center :");
+		// It will return the parent window name as a String
+		String parent=driver.getWindowHandle();
+		System.out.println("The current parent  window name is :"+parent);
+		wait(3000);
+		driver.findElement(By.xpath("(//*[contains(@href,'https://healthid.ndhm.gov.in/')])[1]")).click();
+		Set<String>s=driver.getWindowHandles();
+		// Now iterate using Iterator
+		Iterator<String> I1= s.iterator();
+		while(I1.hasNext())
+		{
+
+		String child_window=I1.next();
+
+
+		if(!parent.equals(child_window))
+		{
+		driver.switchTo().window(child_window);
+
+		System.out.println(driver.switchTo().window(child_window).getTitle());
+
+		//driver.close();
+		}
+	}
+		//switch to the parent window
+		wait(3000);
+		driver.switchTo().window(parent);
+		System.out.println("Switched to parent window...");
+	 }
+	public void getRegisteredStatus() {
+		wait(3000);
+		//String status=driver.findElement(By.xpath("//*[@class=' ']")).getText();
+		String status=driver.findElement(By.xpath("//*[@class='m-l-20  ']")).getText();
+		System.out.println("The number of blocks are:"+status);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
