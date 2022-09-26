@@ -33,7 +33,7 @@ public class SchedulePage extends Aulas_Base.BaseTest {
 	}
 
 	public void clickOnCreateButton() throws InterruptedException {
-		//Thread.sleep(6000);
+		Thread.sleep(3000);
 		WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(30));
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//*[@class='ant-btn ant-btn-primary'])[1]")));
 		driver.findElement(By.xpath("(//*[@class='ant-btn ant-btn-primary'])[1]")).click();
@@ -53,7 +53,7 @@ public class SchedulePage extends Aulas_Base.BaseTest {
 			String subjectName = driver
 					.findElement(By.xpath("(//*[@class='ant-select-item-option-content'])[" + i + "]")).getText();
 			//System.out.println("The subject name is :" + " " + subjectName);
-			if (subjectName.equalsIgnoreCase("English")) {
+			if (subjectName.equalsIgnoreCase("Android Development")) {
 				wait(3000);
 				driver.findElement(By.xpath("(//*[@class='ant-select-item-option-content'])[" + i + "]")).click();
 				System.out.println("----The selection of subject  "+subjectName+" is successfull----");
@@ -62,6 +62,8 @@ public class SchedulePage extends Aulas_Base.BaseTest {
 		}
 
 	}
+	
+	
 
 	public void selectClass() throws InterruptedException {
 		Thread.sleep(3000);
@@ -77,7 +79,7 @@ public class SchedulePage extends Aulas_Base.BaseTest {
 					.findElement(By.xpath("(//*[@class='ant-select-item ant-select-item-option'])[" + i + "]"))
 					.getText();
 		
-			if (nameOfClass.equalsIgnoreCase("AutomatinTEST123-a,b")) {
+			if (nameOfClass.equalsIgnoreCase("6353 class-A")) {
 				wait(3000);
 				driver.findElement(By.xpath("(//*[@class='ant-select-item ant-select-item-option'])[" + i + "]"))
 						.click();
@@ -165,11 +167,13 @@ public class SchedulePage extends Aulas_Base.BaseTest {
 		String h = String.format("%02d", i);
 		System.out.println("The Random number is : " + " " + h);
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("//*[@title='2025-07-" + h + "']")).click();
+		driver.findElement(By.xpath("//*[@title='2025-08-" + h + "']")).click();
 		System.out.println("The selection of date and time was done ");
 		// If user wants to select today is start date then use beolw commend
 		// *[@class='ant-picker-today-btn']
 	}
+	
+
 
 	public void selectStartAndEndTime() {
 		wait(3000);
@@ -298,8 +302,8 @@ public class SchedulePage extends Aulas_Base.BaseTest {
 		System.out.println("The Random number is : " + " " + h);
 		Thread.sleep(3000);
 		// Thread.sleep(5000);
-		driver.findElement(By.xpath("//*[@title='2026-07-" + h + "']")).click();
-		String dateIs=driver.findElement(By.xpath("//*[@title='2026-07-" + h + "']")).getText();
+		driver.findElement(By.xpath("//*[@title='2026-08-" + h + "']")).click();
+		String dateIs=driver.findElement(By.xpath("//*[@title='2026-08-" + h + "']")).getText();
 		System.out.println("The last date selection was done successfully "+"The date is:"+dateIs);
 	}
 
@@ -311,7 +315,7 @@ public class SchedulePage extends Aulas_Base.BaseTest {
 		for (int i = 1; i <= size; i++) {
 			String nameIS = driver.findElement(By.xpath("(//*[@class='ant-btn ant-btn-primary'])[" + i + "]"))
 					.getText();
-			System.out.println("The name is :" + " " + nameIS);
+			//System.out.println("The name is :" + " " + nameIS);
 			if (nameIS.equalsIgnoreCase("Save")) {
 				wait(3000);
 				driver.findElement(By.xpath("(//*[@class='ant-btn ant-btn-primary'])[" + i + "]")).click();
@@ -975,67 +979,77 @@ public String fillClassRoomDetails() {
 		return className;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+public void getDiscriptionMessage() {
+	wait(2000);
+	String actualMessage=driver.findElement(By.xpath("//*[@class='ant-notification-notice-description']")).getText();
+	String expectedMessage="Schedule created successfully";
+	if(actualMessage.equalsIgnoreCase(expectedMessage)) {
+		System.out.println("Schedule created successfully ");
+		
+	}
+	else {
+		System.out.println("The  message is :"+actualMessage);
+		driver.close();
+	}
+	
+	
+	
+}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

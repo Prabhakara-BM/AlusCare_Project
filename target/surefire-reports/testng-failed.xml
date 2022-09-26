@@ -9,8 +9,12 @@
           <include name="setup"/>
           <include name="SearchOneMore"/>
           <include name="announcements"/>
+          <include name="DigitalLibrery"/>
           <include name="assignments"/>
+          <include name="others"/>
+          <include name="practiceTest"/>
           <include name="Test"/>
+          <include name="checkAllNotifiations"/>
         </methods>
       </class> <!-- Test.NotificationModuleDataOper -->
     </classes>

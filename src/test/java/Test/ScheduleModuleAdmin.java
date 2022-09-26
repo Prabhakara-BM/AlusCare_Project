@@ -1,4 +1,4 @@
-package Test;
+	package Test;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -23,7 +23,7 @@ public class ScheduleModuleAdmin extends Aulas_Base.BaseTest {
 
 	AnnouncementPage AP;
 	SchedulePage SP;
-
+	
 	public ScheduleModuleAdmin() {
 		super();
 	}
@@ -52,7 +52,7 @@ public class ScheduleModuleAdmin extends Aulas_Base.BaseTest {
 	@Test
 	public void createScheduleProfile() throws InterruptedException {
 
-		System.out.println("createScheduleProfile test was started ");
+		System.out.println("createScheduleProfile by confirence was started");
 		SP.clickOnSceduleModule();
 		SP.clickOnCreateButton();
 		SP.selectSubject();
@@ -61,12 +61,16 @@ public class ScheduleModuleAdmin extends Aulas_Base.BaseTest {
 
 		//SP.selectMode("Conference");
 		SP.selectModeOfTheClass("Conference");
-		SP.selectDateAndTime();
+		//SP.selectDateAndTime();
+		selectStartDate();
 		SP.selectStartAndEndTime();
 		SP.repeatOnDay();
-		SP.lastDaySelection();
+		//SP.lastDaySelection();
+		selectEndDate();
 		SP.clickOnSave();
-		System.out.println("createScheduleProfile confirence created ");
+		SP.getDiscriptionMessage();
+		
+		System.out.println("createScheduleProfile by confirence completed ");
 
 	}
 	
@@ -82,12 +86,16 @@ public class ScheduleModuleAdmin extends Aulas_Base.BaseTest {
 
 		//SP.selectMode("Conference");
 		SP.selectModeOfTheClass("Broadcast");
-		SP.selectDateAndTime();
+		selectStartDate();
+		//SP.selectDateAndTime();
 		SP.selectStartAndEndTime();
 		SP.repeatOnDay();
-		SP.lastDaySelection();
+		//SP.lastDaySelection();
+		selectEndDate();
 		SP.clickOnSave();
+		SP.getDiscriptionMessage();
 		System.out.println("createScheduleProfile Broadcost created ");
+		//LC.newLogin2("","");
 		
 		
 	}
@@ -101,11 +109,14 @@ public class ScheduleModuleAdmin extends Aulas_Base.BaseTest {
 		SP.selectClass();
 		SP.selectTeacher();
 		SP.selectModeOfTheClass("Offline");
-		SP.selectDateAndTime();
+		//SP.selectDateAndTime();
+		selectStartDate();
 		SP.selectStartAndEndTime();
 		SP.repeatOnDay();
-		SP.lastDaySelection();
+		//SP.lastDaySelection();
+		selectEndDate();
 		SP.clickOnSave();
+		SP.getDiscriptionMessage();
 		System.out.println("createScheduleProfile offline created ");
 		
 		
@@ -128,11 +139,14 @@ public class ScheduleModuleAdmin extends Aulas_Base.BaseTest {
 		SP.selectClass();
 		SP.selectTeacher();
 		SP.selectModeOfTheClass("Zoom 40");
-		SP.selectDateAndTime();
+		//SP.selectDateAndTime();
+		selectStartDate();
 		SP.selectStartAndEndTimeForZoom();
 		SP.repeatOnDay();
-		SP.lastDaySelection();
+		//SP.lastDaySelection();
+		selectEndDate();
 		SP.clickOnSave();
+		SP.getDiscriptionMessage();
 		System.out.println("Test case 5 is finished  ");
 		}
 	
@@ -145,6 +159,7 @@ public class ScheduleModuleAdmin extends Aulas_Base.BaseTest {
 		try {
 			SP.clickOnSceduleModule();
 			SP.EditInOccuranceSchedule();
+			SP.getDiscriptionMessage();
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -160,6 +175,7 @@ public class ScheduleModuleAdmin extends Aulas_Base.BaseTest {
 		try {
 			SP.clickOnSceduleModule();
 			SP.editSchedule();
+			SP.getDiscriptionMessage();
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

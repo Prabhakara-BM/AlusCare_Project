@@ -78,10 +78,25 @@ public class LoginClass extends Aulas_Base.BaseTest
 	public HomePage1 newLogin(String email,String password) throws InterruptedException
 	{
 		Thread.sleep(4000);
+		//
 		Email.sendKeys(email);
 		Password.sendKeys(password);
 		LoginClick.click();
 		return new HomePage1();
+	}
+	
+	public HomePage1 newLogin2(String email,String password) throws InterruptedException
+	{
+		Thread.sleep(4000);
+		driver.findElement(By.xpath("//*[@placeholder='Enter email ID']")).sendKeys(email);
+		Thread.sleep(4000);
+		driver.findElement(By.xpath("//*[@placeholder='Enter password']")).sendKeys(password);
+		Thread.sleep(4000);
+		driver.findElement(By.xpath("//*[@class='ant-btn ant-btn-primary ant-btn-round ant-btn-block r-c-c bold-bold']")).click();
+		return new HomePage1();
+		
+		//
+		
 	}
 	
 	public HomePage1 newLoginUsingMobile(String phonenumber,String OTP) throws InterruptedException

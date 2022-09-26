@@ -42,6 +42,7 @@ public class BaseTest {
 		{
 			prop=new Properties();
 			FileInputStream ip=new FileInputStream (System.getProperty("user.dir")+"\\src\\main\\java\\ConfigProperties");
+			//FileInputStream ip=new FileInputStream (System.getProperty("user.dir")+"\\src\\main\\java\\ConfigProperties");
 			prop.load(ip);
 		}
 		catch(FileNotFoundException e)
@@ -215,4 +216,134 @@ public void currentTimeAndDate24() {
 	String str = sdf.format(new Date());
 	System.out.println("The current time and date on a 24 hour timescale: "+str);
 }
+
+public void selectStartDate() {
+	wait(3000);
+	driver.findElement(By.xpath("(//*[@placeholder='Select Date'])[1]")).click();
+	wait(3000);
+	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+	wait.until(ExpectedConditions
+			.elementToBeClickable(By.xpath("//*[@class='ant-picker-header-super-next-btn']")));
+	for (int i = 0; i < 3; i++) {
+
+		driver.findElement(By.xpath("//*[@class='ant-picker-header-super-next-btn']")).click();
+	}
+	// For Generating random numbers b/w 1 to 10 by adding zero as prefix
+	// eg:01,02,03..ext
+	Random generator = new Random();
+	int i = generator.nextInt(10) + 1;
+	String h = String.format("%02d", i);
+	System.out.println("The Random number is : " + " " + h);
+	
+	// Thread.sleep(5000);
+	//converting month to integer
+	wait(3000);
+	String displayedMonthIs=driver.findElement(By.xpath("//*[@class='ant-picker-month-btn']")).getText();
+	System.out.println("The Currently displaying month is :"+displayedMonthIs);
+	String monthInNumber=converMonthToNum(displayedMonthIs);
+	System.out.println("The returned and covert value is :"+monthInNumber);
+	System.out.println("The "+displayedMonthIs+" "+"in number is :"+monthInNumber);
+	//The displayed year is 
+	wait(3000);
+	String displayedYearIs=driver.findElement(By.xpath("//*[@class='ant-picker-year-btn']")).getText();
+	System.out.println("The Currently displaying month is :"+displayedYearIs);
+	
+	driver.findElement(By.xpath("//*[@title='"+displayedYearIs+"-"+monthInNumber+"-"+h+"']")).click();
+	String dateIs=driver.findElement(By.xpath("//*[@title='"+displayedYearIs+"-"+monthInNumber+"-"+monthInNumber+"']")).getText();
+	System.out.println("The start date selection was done successfully "+"The date is:"+dateIs);
 }
+
+public void getDisplayedMonth() {
+	wait(3000);
+	String displayedMonthIs=driver.findElement(By.xpath("//*[@class='ant-picker-month-btn']")).getText();
+	System.out.println("The Currently displaying month is :"+displayedMonthIs);
+	String monthInNumber=converMonthToNum(displayedMonthIs);
+	System.out.println("The "+displayedMonthIs+"in number is :"+monthInNumber);
+}
+public void getDisplayedYear() {
+	wait(3000);
+	String displayedYearIs=driver.findElement(By.xpath("//*[@class='ant-picker-year-btn']")).getText();
+	System.out.println("The Currently displaying month is :"+displayedYearIs);
+}
+public String converMonthToNum(String month) {
+	wait(3000);
+	String returnedValueIS="";
+	if(month.equalsIgnoreCase("Jan")) {
+		return returnedValueIS="01";
+    }
+	else if(month.equalsIgnoreCase("Feb")) {
+		return returnedValueIS="02";
+    }
+	else if(month.equalsIgnoreCase("Mar")) {
+		return returnedValueIS="03";
+    }
+	else if(month.equalsIgnoreCase("Apr")) {
+		return returnedValueIS="04";
+    }
+	else if(month.equalsIgnoreCase("May")) {
+		return returnedValueIS="05";
+    }
+	else if(month.equalsIgnoreCase("Jun")) {
+		return returnedValueIS="06";
+    }
+	else if(month.equalsIgnoreCase("Jul")) {
+		return returnedValueIS="07";
+    }
+	else if(month.equalsIgnoreCase("Aug")) {
+		return returnedValueIS="08";
+    }
+	else if(month.equalsIgnoreCase("Sep")) {
+		return returnedValueIS="09";
+    }
+	else if(month.equalsIgnoreCase("Oct")) {
+		return returnedValueIS="10";
+    }
+	else if(month.equalsIgnoreCase("Nov")) {
+		return returnedValueIS="11";
+    }
+	else if(month.equalsIgnoreCase("Dec")) {
+		return returnedValueIS="12";
+    }
+	
+	return returnedValueIS;
+	}
+
+public void selectEndDate() {
+	wait(3000);
+	driver.findElement(By.xpath("(//*[@placeholder='Select Date'])[2]")).click();
+	wait(3000);
+	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+	wait.until(ExpectedConditions
+			.elementToBeClickable(By.xpath("(//*[@class='ant-picker-header-super-next-btn'])[2]")));
+	for (int i = 0; i < 4; i++) {
+
+		driver.findElement(By.xpath("(//*[@class='ant-picker-header-super-next-btn'])[2]")).click();
+	}
+	// For Generating random numbers b/w 1 to 10 by adding zero as prefix
+	// eg:01,02,03..ext
+	Random generator = new Random();
+	int i = generator.nextInt(10) + 1;
+	String h = String.format("%02d", i);
+	System.out.println("The Random number is : " + " " + h);
+	
+	// Thread.sleep(5000);
+	//converting month to integer
+	wait(3000);
+	String displayedMonthIs=driver.findElement(By.xpath("(//*[@class='ant-picker-month-btn'])[2]")).getText();
+	System.out.println("The Currently displaying month is :"+displayedMonthIs);
+	String monthInNumber=converMonthToNum(displayedMonthIs);
+	System.out.println("The returned and covert value is :"+monthInNumber);
+	System.out.println("The "+displayedMonthIs+" "+"in number is :"+monthInNumber);
+	//The displayed year is 
+	wait(3000);
+	String displayedYearIs=driver.findElement(By.xpath("(//*[@class='ant-picker-year-btn'])[2]")).getText();
+	System.out.println("The Currently displaying month is :"+displayedYearIs);
+	wait(3000);
+	driver.findElement(By.xpath("//*[@title='"+displayedYearIs+"-"+monthInNumber+"-"+h+"']")).click();
+	String dateIs=driver.findElement(By.xpath("//*[@title='"+displayedYearIs+"-"+monthInNumber+"-"+monthInNumber+"']")).getText();
+	System.out.println("The last date selection was done successfully "+"The date is:"+dateIs);
+	
+}
+}
+
+
