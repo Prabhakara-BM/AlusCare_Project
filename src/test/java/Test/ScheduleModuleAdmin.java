@@ -234,6 +234,8 @@ public class ScheduleModuleAdmin extends Aulas_Base.BaseTest {
 		SP.createCourse();
 		SP.createNewClass();
 	}
+
+
 }
 	
 	

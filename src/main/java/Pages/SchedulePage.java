@@ -65,6 +65,7 @@ public class SchedulePage extends Aulas_Base.BaseTest {
 	
 	
 
+
 	public void selectClass() throws InterruptedException {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//*[@placeholder='Select Class']")).click();

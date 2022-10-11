@@ -112,14 +112,13 @@ public class NotificationModuleDataOper extends Aulas_Base.BaseTest {
 		NP.clickAllSelectOneByOne();
 		System.out.println("First test case 8 Completed ");
 		}
-	@Test(priority=9)
+	/*@Test(priority=9)
 	public void SearchOneMore() {
 		System.out.println("First test case 9 started ");
 		NP.clickOnNotification();
 		NP.getRegisteredStatus();
 		
 		System.out.println("First test case 9 Completed ");
-		}
-	
+		}*/
 
 }
