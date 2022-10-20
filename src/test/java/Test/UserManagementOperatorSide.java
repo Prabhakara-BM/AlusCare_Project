@@ -72,7 +72,7 @@ public class UserManagementOperatorSide extends BaseTest {
 		UM.addaUser("OperationCreation2");
 		System.out.println("Test case 1 is Completed:");
 	}
-	@Test(priority = 30)
+	@Test(priority = 2)
 	public void operationAdminvalidateUserManagementPage() throws InterruptedException {
 		WaitTil(2000);
 		System.out.println("The Test case 2 is started ");
@@ -105,7 +105,7 @@ public class UserManagementOperatorSide extends BaseTest {
 		
 	}
 	
-	@Test(priority = 5)
+	/*@Test(priority = 5)
 	public void operationAdminvalidateStudentViewmorePage() throws InterruptedException {
 		WaitTil(2000);
 		System.out.println("The Test case 5 is started ");
@@ -123,7 +123,7 @@ public class UserManagementOperatorSide extends BaseTest {
 		
 	}
 	
-	@Test(priority = 6)
+	@Test(priority = 6) 
 	public void operationAdminvalidateTeacherViewmorePage() throws InterruptedException {
 		WaitTil(2000);
 		System.out.println("The Test case 6 is started ");
@@ -142,7 +142,7 @@ public class UserManagementOperatorSide extends BaseTest {
 		System.out.println("The Test case 6 is Completed ");
 		
 	}
-	@Test(priority = 7)
+	@Test(priority = 7) 
 	public void operationAdminvalidateDataoperatorViewmorePage() throws InterruptedException {
 		WaitTil(2000);
 		System.out.println("The Test case 7 is started ");
@@ -179,6 +179,6 @@ public class UserManagementOperatorSide extends BaseTest {
 		UM.adminValidateViewMorePage();
 		System.out.println("The Test case 8 is Completed ");
 		
-	}
+	}*/
 
 }

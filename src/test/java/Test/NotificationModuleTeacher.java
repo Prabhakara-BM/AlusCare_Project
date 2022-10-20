@@ -88,7 +88,7 @@ public class NotificationModuleTeacher extends Aulas_Base.BaseTest {
 		NP.clickAllSelectOneByOne();
 		System.out.println("First test case 5 Completed ");
 		}
-	@Test(priority=6)
+	/*@Test(priority=6)
 	public void practiceTest() {
 		System.out.println("First test case 6 started ");
 		NP.clickOnNotification();
@@ -111,7 +111,7 @@ public class NotificationModuleTeacher extends Aulas_Base.BaseTest {
 		NP.clickOnOthers();
 		NP.clickAllSelectOneByOne();
 		System.out.println("First test case 8 Completed ");
-		}
+		}*/
 	
 
 }

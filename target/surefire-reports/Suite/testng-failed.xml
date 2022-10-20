@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT" verbose="0">
+  <test thread-count="5" name="Test(failed)" verbose="0">
+    <classes>
+      <class name="Test.UserManagementDataOpeSide">
+        <methods>
+          <include name="setup"/>
+          <include name="dataoperatorAdminregistrationRequestsApprovals"/>
+          <include name="dataoperatorAdminvalidateRegistrationRequestsPage"/>
+          <include name="dataoperatorAdminuserCreations"/>
+          <include name="dataoperatorAdminvalidateUserManagementPage"/>
+        </methods>
+      </class> <!-- Test.UserManagementDataOpeSide -->
+      <class name="Test.ScheduleModuleAdmin">
+        <methods>
+          <include name="createScheduleProfile"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- Test.ScheduleModuleAdmin -->
+      <class name="Test.DataOperatorAdminCoursesTest">
+        <methods>
+          <include name="taerDown"/>
+          <include name="CourseDelete"/>
+          <include name="CourseCreations"/>
+          <include name="setup"/>
+          <include name="CourseUpdate"/>
+          <include name="SearchCourse"/>
+        </methods>
+      </class> <!-- Test.DataOperatorAdminCoursesTest -->
+      <class name="Test.NotificationModuleDataOper">
+        <methods>
+          <include name="setup"/>
+          <include name="announcements"/>
+        </methods>
+      </class> <!-- Test.NotificationModuleDataOper -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

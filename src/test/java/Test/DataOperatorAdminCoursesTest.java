@@ -35,7 +35,7 @@ public class DataOperatorAdminCoursesTest extends BaseTest {
 
 		LC = new LoginClass();
 		
-		HP = LC.MobileRegister(prop.getProperty("DataOperatorAdmin"), prop.getProperty("DefaultOTP"));
+		HP = LC.MobileRegister(prop.getProperty("CMNUM"), prop.getProperty("OTP"));
 		
 	}	
 	

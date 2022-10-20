@@ -223,9 +223,9 @@ public class ClassroomPage extends Aulas_Base.BaseTest
 		Thread.sleep(2000);
 		CreateClassButton.click();
 		Thread.sleep(2000);
-		ClassNameField.sendKeys("Automation Testing");
+		ClassNameField.sendKeys(generateRandomPassword(6));
 		Thread.sleep(2000);
-		SectionField.sendKeys("CSE");
+		SectionField.sendKeys(generateRandomPassword(1));
 		Thread.sleep(2000);
 		CourseSelector.click();
 		Thread.sleep(2000);
@@ -240,9 +240,9 @@ public class ClassroomPage extends Aulas_Base.BaseTest
 		Thread.sleep(2000);
 		CreateClassButton.click();
 		Thread.sleep(2000);
-		ClassNameField.sendKeys("Albert Einstein");
+		ClassNameField.sendKeys(generateRandomPassword(6));
 		Thread.sleep(2000);
-		SectionField.sendKeys("A");
+		SectionField.sendKeys(generateRandomPassword(1));
 		Thread.sleep(2000);
 		CourseSelector.click();
 		Thread.sleep(2000);
@@ -260,9 +260,10 @@ public class ClassroomPage extends Aulas_Base.BaseTest
 		Thread.sleep(2000);
 		CreateClassButton.click();
 		Thread.sleep(2000);
-		ClassNameField.sendKeys("APJ Abdule Kalam");
+		ClassNameField.sendKeys(generateRandomPassword(5));
+		//ClassNameField.sendKeys("APJ Abdule Kalam");
 		Thread.sleep(2000);
-		SectionField.sendKeys("A");
+		SectionField.sendKeys(generateRandomPassword(1));
 		Thread.sleep(2000);
 		CourseSelector.click();
 		Thread.sleep(2000);
@@ -288,7 +289,7 @@ public class ClassroomPage extends Aulas_Base.BaseTest
       	Thread.sleep(2000);
       	AddStudentsbutton.click();
       	Thread.sleep(2000);
-      	SearchByName.sendKeys("a");
+      	SearchByName.sendKeys("OrtO");
       	Thread.sleep(2000);
       	SelStudentName.click();
       	Thread.sleep(2000);

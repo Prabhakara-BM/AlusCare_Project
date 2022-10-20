@@ -49,7 +49,7 @@ public class feeManagementSuperAdminTest extends BaseTest {
 		
 	}
 
-	@Test(priority = 2)
+	/*@Test(priority = 2)
 	public void GenerateOnlineRequest() throws InterruptedException {
 		System.out.println("--------The test case 2 was started------- ");
 		WaitTil(2000);
@@ -57,24 +57,24 @@ public class feeManagementSuperAdminTest extends BaseTest {
 		WaitTil(2000);
 		FM.PaymentRequestForClass();
 
-	}
+	}*/
 
-	@Test(priority = 3)
+	/*@Test(priority = 3)
 	public void AddOfflinePaymnet() throws InterruptedException {
 		System.out.println("--------The test case 3 was started------- ");
 		WaitTil(2000);
 		FM.AddAllOfflinePaymnets();
 
-	}
+	}*/
 
-	@Test(priority = 6)
+	/*@Test(priority = 6)
 	public void Transaction() throws InterruptedException {
 		System.out.println("--------The test case 6 was started------- ");
 		Thread.sleep(2000);
 		FM.Transaction();
-	}
+	}*/
 
-	@Test(priority = 7)
+	/*@Test(priority = 7)
 	public void AllStudents() throws InterruptedException {
 		System.out.println("--------The test case 7 was started------- ");
 		Thread.sleep(2000);
@@ -89,7 +89,7 @@ public class feeManagementSuperAdminTest extends BaseTest {
 			WaitTil(3000);
 			FM.recentActivity();
 		
-	}
+	}*/
 
 	
 	@AfterSuite

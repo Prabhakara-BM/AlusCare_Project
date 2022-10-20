@@ -39,7 +39,7 @@ public class UserManagementSuperAdminTest extends BaseTest {
 	}
 	
 
-	@Test(priority = 1)
+	@Test(priority = 1) 
 	public void userCreations() throws InterruptedException {
 		WaitTil(2000);
 		UM.clickUserManagement();
@@ -52,49 +52,56 @@ public class UserManagementSuperAdminTest extends BaseTest {
 		WaitTil(2000);
 		UM.addaUser("TeacherCreation");
 		WaitTil(2000);
-		UM.addaUser("TeacherCreation1");
+		/*UM.addaUser("TeacherCreation1");
 		WaitTil(2000);
 		UM.addaUser("TeacherCreation2");
-		WaitTil(2000);
+		WaitTil(2000);*/
 		UM.validateClickCancelDataOperator();
 		WaitTil(2000);
 		UM.addaUser("DataOperatorCreation");
-		WaitTil(2000);
+		/*WaitTil(2000);
 		UM.addaUser("DataOperatorCreation1");
 		WaitTil(2000);
 		UM.addaUser("DataOperatorCreation2");
-		WaitTil(2000);
+		WaitTil(2000);*/
 		UM.validateClickCancelOperation();
 		WaitTil(2000);
 		UM.addaUser("OperationCreation");
-		WaitTil(2000);
+		/*WaitTil(2000);
 		UM.addaUser("OperationCreation1");
 		WaitTil(2000);
-		UM.addaUser("OperationCreation2");
+		UM.addaUser("OperationCreation2");*/
 	}
 	@Test(priority = 2)
 	public void validateUserManagementPage() throws InterruptedException {
 		WaitTil(2000);
+		UM.clickUserManagement();
+		WaitTil(2000);
 		UM.validateUserManagementPage();
 			
 	}
-	@Test(priority = 3)
+	@Test(priority = 3) 
 	public void registrationRequestsApprovals() throws InterruptedException {
-	
+		WaitTil(2000);
+		UM.clickUserManagement();
 		WaitTil(2000);
 		UM.registrationRequestsApprovals();
 	}
 
-	@Test(priority = 4)
+	@Test(priority = 4) 
 	public void validateRegistrationRequestsPage() throws InterruptedException {
+		WaitTil(2000);
+		UM.clickUserManagement();
 		WaitTil(2000);
 		UM.validateRegistrationRequestsPage();
 		WaitTil(2000);
 		
 	}
 	
-	@Test(priority = 5)
+	/*@Test(priority = 5)
 	public void validateStudentViewmorePage() throws InterruptedException {
+		WaitTil(2000);
+		UM.clickUserManagement();
 		WaitTil(2000);
 		UM.studentViewMoreClick();
 		WaitTil(2000);
@@ -106,8 +113,10 @@ public class UserManagementSuperAdminTest extends BaseTest {
 		WaitTil(2000);
 		
 	}
-	@Test(priority = 6)
+	@Test(priority = 6) 
 	public void validateTeacherViewmorePage() throws InterruptedException {
+		WaitTil(2000);
+		UM.clickUserManagement();
 		WaitTil(2000);
 		UM.clickTeacherViewMore();
 		WaitTil(2000);
@@ -116,15 +125,17 @@ public class UserManagementSuperAdminTest extends BaseTest {
 		UM.vieworeAddaUser("UserCreation");
 		WaitTil(2000);
 		UM.vieworeAddaUser("TeacherCreation1");
-		WaitTil(2000);
-		UM.vieworeAddaUser("TeacherCreation2");
+		//WaitTil(2000);
+		//UM.vieworeAddaUser("TeacherCreation2");
 		WaitTil(2000);
 		UM.validateViewMorePage();
 		WaitTil(2000);
 		
 	}
-	@Test(priority = 7)
+	@Test(priority = 7) 
 	public void validateDataoperatorViewmorePage() throws InterruptedException {
+		WaitTil(2000);
+		UM.clickUserManagement();
 		WaitTil(2000);
 		UM.clickDataoperatorViewMore();
 		WaitTil(2000);
@@ -133,17 +144,20 @@ public class UserManagementSuperAdminTest extends BaseTest {
 		UM.vieworeAddaUser("UserCreation");
 		WaitTil(2000);
 		UM.vieworeAddaUser("DataOperatorCreation1");
+		//WaitTil(2000);
+		//UM.vieworeAddaUser("DataOperatorCreation2");
 		WaitTil(2000);
-		UM.vieworeAddaUser("DataOperatorCreation2");
+		driver.navigate().refresh();
 		WaitTil(2000);
 		UM.validateViewMorePage();
 		WaitTil(2000);
 		
 	}
 	
-	@Test(priority = 6)
+	@Test(priority = 8)
 	public void validateOperationViewmorePage() throws InterruptedException {
-	
+		WaitTil(2000);
+		UM.clickUserManagement();
 		WaitTil(2000);
 		UM.clickOperationViewMore();
 		WaitTil(2000);
@@ -152,19 +166,20 @@ public class UserManagementSuperAdminTest extends BaseTest {
 		UM.vieworeAddaUser("UserCreation");
 		WaitTil(2000);
 		UM.vieworeAddaUser("OperationCreation1");
-		WaitTil(2000);
-		UM.vieworeAddaUser("OperationCreation2");
+		//WaitTil(2000);
+		//UM.vieworeAddaUser("OperationCreation2");
 		WaitTil(2000);
 		UM.validateViewMorePage();
 		
 	}
 	
-	@Test(priority = 7)
+	@Test(priority = 9)
 	public void superAdminLogout()
 	{
 		WaitTil(2000);
 		LC.LogOut();
 		WaitTil(2000);
+		System.out.println("SuperAdmin Logged Out");
 	}
 	
 	//Admin login 
@@ -528,7 +543,7 @@ public class UserManagementSuperAdminTest extends BaseTest {
 		UM.adminValidateViewMorePage();
 		
 	}*/
-	@Test(priority = 36)
+	/*@Test(priority = 36, enabled = false)
 	public void uploadImage() throws InterruptedException {
 		wait(3000);
 		try {
@@ -541,6 +556,6 @@ public class UserManagementSuperAdminTest extends BaseTest {
 			e.printStackTrace();
 		}
 		
-	}
+	}*/
 	
 }

@@ -142,9 +142,10 @@ public class UserManagementPage extends BaseTest {
 	WebElement GrowthSelector;
 	@FindBy(xpath = "//div[text()='Week']")
 	WebElement GrowthWeek;
-	@FindBy(xpath = "//div[text()='Month']")
+	@FindBy(xpath = "(//*[@class='ant-select-item-option-content'])[2]")   //Months
 	WebElement GrowthMonth;
-	@FindBy(xpath = "//span[@class='anticon anticon-calendar']")
+	//@FindBy(xpath = "//span[@class='anticon anticon-calendar ant-popover-open']")  //span[@class='anticon anticon-calendar']
+	@FindBy(xpath = "(//*[@class='anticon anticon-calendar'])[1]")  
 	WebElement GrowthCalendar;
 	@FindBy(xpath = "//input[@placeholder='Start Date']")
 	WebElement GrowthStartDateSelector;
@@ -655,7 +656,7 @@ public class UserManagementPage extends BaseTest {
     	WaitTil(2000);
     	AddButton.click();
     	WaitTil(2000);
-		verifyPopUp1();
+		verifyPopUp();
 		WaitTil(2000);
     	
     }
@@ -699,7 +700,7 @@ public class UserManagementPage extends BaseTest {
 
 	public void validateUnassignedStudent() throws InterruptedException {
 		WaitTil(2000);
-		WebElement Unassigned = driver.findElement(By.xpath("//h2[text()='Unassigned']"));
+		WebElement Unassigned = driver.findElement(By.xpath("//*[text()='Unassigned ']"));
 		js.executeScript("arguments[0].scrollIntoView(true)", Unassigned);
 		WaitTil(2000);
 		Student1.click();
@@ -738,7 +739,7 @@ public class UserManagementPage extends BaseTest {
 		searchName();
 		WaitTil(2000);
 		Backbutton.click();
-		WebElement Unassigned1 = driver.findElement(By.xpath("//h2[text()='Unassigned']"));
+		WebElement Unassigned1 = driver.findElement(By.xpath("//*[text()='Unassigned ']"));
 		Thread.sleep(1000);
 		js.executeScript("arguments[0].scrollIntoView(true)", Unassigned1);
 		Thread.sleep(2000);
@@ -922,6 +923,7 @@ public class UserManagementPage extends BaseTest {
 
 		Thread.sleep(6000);
 		Wait(OperationViewMore);
+		//driver.findElement(By.xpath("//*[@class='anticon anticon-close ant-modal-close-icon']")).click();
 		OperationViewMore.click();
 		Thread.sleep(6000);
 	}
@@ -961,43 +963,44 @@ public class UserManagementPage extends BaseTest {
 	}
 
 	public void validateUserManagementPage() throws InterruptedException {
-		WaitTil(2000);
+		
+		WaitTil(5000);
 		StudentViewMore.click();
-		WaitTil(2000);
+		WaitTil(5000);
 		ViewMoreBackButton.click();
-		WaitTil(2000);
+		WaitTil(5000);
 		TeacherViewMore.click();
-		WaitTil(2000);
+		WaitTil(5000);
 		ViewMoreBackButton.click();
-		WaitTil(2000);
+		WaitTil(5000);
 		DataOperatorViewMore.click();
-		WaitTil(2000);
+		WaitTil(5000);
 		ViewMoreBackButton.click();
-		WaitTil(2000);
+		WaitTil(5000);
 		OperationViewMore.click();
-		WaitTil(2000);
+		WaitTil(5000);
 		ViewMoreBackButton.click();
-		WaitTil(2000);
+		WaitTil(5000);
 		ChangeSettings.click();
-		WaitTil(2000);
+		WaitTil(5000);
 		SettingsIntoMark.click();
-		WaitTil(2000);
+		WaitTil(5000);
 		ViewAll.click();
-		WaitTil(2000);
+		WaitTil(5000);
 		Backbutton.click();
-		WaitTil(2000);
+		WaitTil(5000);
 		growthSummary();
-		WaitTil(2000);
+		WaitTil(5000);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		WaitTil(2000);
+		WaitTil(5000);
 		WebElement RecentlyAddedUser = driver.findElement(By.xpath("//h2[text()='Recently added user(s)']"));
-		WaitTil(2000);
+		WaitTil(5000);
 		js.executeScript("arguments[0].scrollIntoView(true)", RecentlyAddedUser);
-		WaitTil(2000);
+		WaitTil(5000);
 		driver.findElement(By.xpath("(//div[@class='userCardStyle'])[1]")).click();
-		WaitTil(2000);
+		WaitTil(5000);
 		Backbutton.click();
-		WaitTil(2000);
+		WaitTil(5000);
 
 	}
 
@@ -1032,7 +1035,7 @@ public class UserManagementPage extends BaseTest {
 		WebElement ele = driver.findElement(By.xpath("(//div[@class='ant-col ant-col-md-24 ant-col-lg-10']/div/div/div/h3)[1]"));
 		String actual = ele.getText();
 		System.out.println("The Total Requests are :-" + actual);
-		String exp = "Registration request(s) (" + "0" + ")";
+		String exp = "Registration Request(s) (" + "0" + ")";
 		if (exp.equals(actual)) {
 			System.out.println("There is No Registration request(s)");
 			
@@ -1086,7 +1089,7 @@ public class UserManagementPage extends BaseTest {
 		String actual3= ele5.getText();
 		System.out.println("The Total Requests are :-" + actual3);
 		WaitTil(2000);
-		WebElement ele1 = driver.findElement(By.xpath("(//div[@class='text-md'])[1]"));
+		WebElement ele1 = driver.findElement(By.xpath("(//*[@class='ant-page-header-heading-title'])[1]"));
 		String actual1 = ele1.getText();
 		System.out.println("The Total Requests are :-" + actual1);
 		String exp1 = "Registration request(s) (0)";
@@ -1356,6 +1359,7 @@ public class UserManagementPage extends BaseTest {
 			Thread.sleep(3000);
 			driver.findElement(By.xpath("(//*[@class='ant-select-selector'])[1]")).click();        // Blood group selector
 			Thread.sleep(3000);
+			 WaitTil(1000);
 			driver.findElement(By.xpath("(//*[@class='ant-select-item-option-content'])[4]")).click();   // blood group 
 			Thread.sleep(3000);
 			driver.findElement(By.xpath("//*[@placeholder='Select a date']")).click();

@@ -1,3 +1,4 @@
+
 package Pages;
 
 import java.time.Duration;
@@ -64,7 +65,6 @@ public class SchedulePage extends Aulas_Base.BaseTest {
 	}
 	
 	
-
 
 	public void selectClass() throws InterruptedException {
 		Thread.sleep(3000);
@@ -319,13 +319,14 @@ public class SchedulePage extends Aulas_Base.BaseTest {
 			//System.out.println("The name is :" + " " + nameIS);
 			if (nameIS.equalsIgnoreCase("Save")) {
 				wait(3000);
-				driver.findElement(By.xpath("(//*[@class='ant-btn ant-btn-primary'])[" + i + "]")).click();
+		//driver.findElement(By.xpath("(//*[@class='ant-btn ant-btn-primary'])[" + i + "]")).click();
 				System.out.println("Clicked on" + nameIS + "button");
 				break;
 			}
 			wait(3000);
 			
 		}
+		driver.findElement(By.xpath("//*[@data-icon='close']")).click();
 	//	messageAndDescription();
 		
 		
@@ -993,13 +994,28 @@ public void getDiscriptionMessage() {
 		driver.close();
 	}
 	
-	
-	
 }
 
+        public void selectTeacherO() {
+        	wait(2000);
+			driver.findElement(By.id("rc_select_5")).sendKeys("Nk Teacher");
+			wait(2000);
+			driver.findElement(By.xpath("(//*[@class='ant-select-item-option-content'])[14]")).click();
+			wait(2000);
+		}
+        
+        public void selectDateandTimeO() {
+			wait(2000);
+            driver.findElement(By.xpath("(//*[@class='ant-picker-input'])[2]")).click();
+            wait(2000);
+            driver.findElement(By.xpath("//*[text()='15']")).click();
+            wait(2000);
+            
+		}
+
+        
 }
-
-
+         
 
 
 

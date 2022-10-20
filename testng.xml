@@ -39,6 +39,10 @@
       <class name="Test.TestModuleDataOperator"/> 
       <class name="Test.UserManagementSuperAdminTest"/>-->
        <class name="Test.NotificationModuleDataOper"/>
+        <class name="Test.feeManagementSuperAdminTest"/>
+        <class name="Test.ScheduleModuleAdmin"/>
+        <class name="Test.DataOperatorAdminCoursesTest"/>
+         <class name="Test.UserManagementDataOpeSide"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

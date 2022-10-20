@@ -68,6 +68,10 @@ OTP=592726
 PTOPhonenum=99863 36886
 OTP=592726
 
+<!--Schedule Module  Operator -->
+DataOperatorAdmin=99321 12388
+OTP=592726
+
 
 
 
@@ -92,6 +96,11 @@ OTP=592726
 Np=99342 56780
 ND=99321 12388
 NO=99419 09041
+
+<!---Course Module-->
+CMNUM=99321 12388
+OTP=592726
+
 
 
 

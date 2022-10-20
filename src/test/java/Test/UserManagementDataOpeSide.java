@@ -37,9 +37,10 @@ public class UserManagementDataOpeSide extends BaseTest {
 
 	}
 
-@Test(priority = 19)
+@Test(priority =1)
 public void dataoperatorAdminuserCreations() throws InterruptedException {
 	WaitTil(2000);
+	System.out.println("The Test case 1 is started ");
 	UM.clickUserManagement();
 	WaitTil(2000);
 	UM.validateClickCancelStudent();
@@ -63,6 +64,7 @@ public void dataoperatorAdminuserCreations() throws InterruptedException {
 	UM.addaUser("OperationCreation");
 	WaitTil(2000);
 	UM.addaUser("OperationCreation2");
+	System.out.println("The Test case 1 is completed ");
 }
 @Test(priority = 2)
 public void dataoperatorAdminvalidateUserManagementPage() throws InterruptedException {
@@ -98,7 +100,7 @@ public void dataoperatorAdminvalidateRegistrationRequestsPage() throws Interrupt
 	
 }
 
-@Test(priority = 5)
+/*@Test(priority = 5)
 public void dataoperatorAdminvalidateStudentViewmorePage() throws InterruptedException {
 	WaitTil(2000);
 	System.out.println("The Test case 5 is started ");
@@ -182,6 +184,6 @@ public void dataoperatorAdminLogout() throws InterruptedException
 	LC.LogOut();
 	WaitTil(2000);
 	System.out.println("The Test case 9 is Completetd ");
-}
+}*/
 
 }

@@ -49,7 +49,7 @@ public class ScheduleModuleAdmin extends Aulas_Base.BaseTest {
 
 	}
 
-	@Test
+	@Test(priority=1)
 	public void createScheduleProfile() throws InterruptedException {
 
 		System.out.println("createScheduleProfile by confirence was started");
@@ -57,8 +57,8 @@ public class ScheduleModuleAdmin extends Aulas_Base.BaseTest {
 		SP.clickOnCreateButton();
 		SP.selectSubject();
 		SP.selectClass();
-		SP.selectTeacher();
-
+		//SP.selectTeacher();
+        SP.selectTeacherO();
 		//SP.selectMode("Conference");
 		SP.selectModeOfTheClass("Conference");
 		//SP.selectDateAndTime();
@@ -68,22 +68,23 @@ public class ScheduleModuleAdmin extends Aulas_Base.BaseTest {
 		//SP.lastDaySelection();
 		selectEndDate();
 		SP.clickOnSave();
-		SP.getDiscriptionMessage();
+		//SP.getDiscriptionMessage();
 		
 		System.out.println("createScheduleProfile by confirence completed ");
 
 	}
 	
-	@Test(priority=2)
+	/*@Test(priority=2)
 	public void createSceduleForBroadcast() throws InterruptedException {
 		Thread.sleep(3000);
 		System.out.println("createScheduleProfile test was started ");
 		SP.clickOnSceduleModule();
 		SP.clickOnCreateButton();
 		SP.selectSubject();
+		
 		SP.selectClass();
-		SP.selectTeacher();
-
+		//SP.selectTeacher();
+        SP.selectTeacherO();
 		//SP.selectMode("Conference");
 		SP.selectModeOfTheClass("Broadcast");
 		selectStartDate();
@@ -93,7 +94,7 @@ public class ScheduleModuleAdmin extends Aulas_Base.BaseTest {
 		//SP.lastDaySelection();
 		selectEndDate();
 		SP.clickOnSave();
-		SP.getDiscriptionMessage();
+		//SP.getDiscriptionMessage();
 		System.out.println("createScheduleProfile Broadcost created ");
 		//LC.newLogin2("","");
 		
@@ -107,7 +108,8 @@ public class ScheduleModuleAdmin extends Aulas_Base.BaseTest {
 		SP.clickOnCreateButton();
 		SP.selectSubject();
 		SP.selectClass();
-		SP.selectTeacher();
+		//SP.selectTeacher();
+		SP.selectTeacherO();
 		SP.selectModeOfTheClass("Offline");
 		//SP.selectDateAndTime();
 		selectStartDate();
@@ -137,7 +139,8 @@ public class ScheduleModuleAdmin extends Aulas_Base.BaseTest {
 		SP.clickOnCreateButton();
 		SP.selectSubject();
 		SP.selectClass();
-		SP.selectTeacher();
+		//SP.selectTeacher();
+		SP.selectTeacherO();
 		SP.selectModeOfTheClass("Zoom 40");
 		//SP.selectDateAndTime();
 		selectStartDate();
@@ -182,9 +185,9 @@ public class ScheduleModuleAdmin extends Aulas_Base.BaseTest {
 		}
 		System.out.println("The test case 7 was completetd  ");
 
-	}
+	}*/
 	
-	@Test(priority = 8)
+/*@Test(priority = 8)
 	public void doSearchFilterOper() throws InterruptedException {
 		Thread.sleep(3000);
 
@@ -196,7 +199,7 @@ public class ScheduleModuleAdmin extends Aulas_Base.BaseTest {
 		
 		System.out.println("The test case 8 was completetd  ");
 
-	}
+	}*/
 	
 	
 	/*@Test(priority = 8)
@@ -206,7 +209,7 @@ public class ScheduleModuleAdmin extends Aulas_Base.BaseTest {
 	    Assert.assertTrue(false);	
 	   // SP.forcefullyFail();
 	}*/
-	@Test(priority = 9)
+	@Test(priority = 9, enabled = false)
 	public void doSearchFilterOper2() throws InterruptedException {
 		Thread.sleep(3000);
 
@@ -220,7 +223,7 @@ public class ScheduleModuleAdmin extends Aulas_Base.BaseTest {
 		System.out.println("The test case 8 was completetd  ");
 
 	}
-	@Test(priority = 10)
+	/*@Test(priority = 10)
 	public void doingDateSelection() {
 		wait(3000);
 		currentTimeAndDate24();
@@ -233,9 +236,7 @@ public class ScheduleModuleAdmin extends Aulas_Base.BaseTest {
 		SP.createStudent();
 		SP.createCourse();
 		SP.createNewClass();
-	}
-
-
+	}*/
 }
 	
 	

@@ -28,7 +28,7 @@ public class PracticeTestAdmin extends BaseTest{
 
 		LC = new LoginClass();
 		
-		HP = LC.newLoginUsingMobile(prop.getProperty("PTDPhonenum"),prop.getProperty("OTP"));
+		HP = LC.newLogin2(prop.getProperty("username"),prop.getProperty("password"));
 		
 		}
 	@Test(priority=1)

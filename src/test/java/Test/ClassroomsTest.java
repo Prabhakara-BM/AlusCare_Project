@@ -1,6 +1,7 @@
 package Test;
 
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
 import Pages.ClassroomPage;
@@ -17,7 +18,7 @@ public class ClassroomsTest extends Aulas_Base.BaseTest {
 		super();
 		
 	}
-	@BeforeMethod
+	@BeforeSuite
 	public void setup() throws InterruptedException{
 		initilization();
 		CR=new ClassroomPage();
@@ -31,35 +32,39 @@ public class ClassroomsTest extends Aulas_Base.BaseTest {
 	}
 	@Test(priority=1, groups="Classrooms Module")
 	public void ClickonClassroom() throws InterruptedException{
+System.out.println("Test case 1 started ");
 		Thread.sleep(2000);
 		CR.ClickonClassrooms();
+		System.out.println("Test case 1 completed ");
 		
 	}
-	@Test(priority=2, groups="Classrooms Module")
+   @Test(priority=2, groups="Classrooms Module")
 	public void CreateaNewClass() throws InterruptedException{
 		Thread.sleep(2000);
+		System.out.println("Test case 2 started ");
+		CR.ClickonClassrooms();
 		CR.CreateaNewClass();
+		System.out.println("Test case 2 completed ");
 		
 	}
-	@Test(priority=3, groups="Classrooms Module")
-	public void CreateaNewClass1() throws InterruptedException{
-		Thread.sleep(2000);
-		CR.CreateaNewClass1();
-		
-	}
-	@Test(priority=4, groups="Classrooms Module")
+	
+	/*@Test(priority=3, groups="Classrooms Module")
 	public void CreateaNewClass2() throws InterruptedException{
 		Thread.sleep(2000);
+		System.out.println("Test case 4 started ");
 		CR.CreateaNewClass2();
+		System.out.println("Test case 4 completed ");
 		
-	}
-	@Test(priority=5, groups="Classrooms Module")
+	}*/
+   /*@Test(priority=4, groups="Classrooms Module")
 	public void AddStudent() throws InterruptedException{
 		Thread.sleep(2000);
+		System.out.println("Test case 5 started ");
 		CR.AddStudent();
+		System.out.println("Test case 5 completed ");
 		
 	}
-	/*
+	
 	@Test(priority=6, groups="Classrooms Module")
 	public void AddAssignedStudent() throws InterruptedException{
 		Thread.sleep(2000);

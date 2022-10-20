@@ -96,7 +96,7 @@ public class NotificationModuleDataOper extends Aulas_Base.BaseTest {
 		NP.clickAllSelectOneByOne();
 		System.out.println("First test case 6 Completed ");
 		}
-	@Test(priority=7)
+	/*@Test(priority=7)
 	public void DigitalLibrery() {
 		System.out.println("First test case 7 started ");
 		NP.clickOnNotification();
@@ -112,7 +112,7 @@ public class NotificationModuleDataOper extends Aulas_Base.BaseTest {
 		NP.clickAllSelectOneByOne();
 		System.out.println("First test case 8 Completed ");
 		}
-	/*@Test(priority=9)
+	@Test(priority=9)
 	public void SearchOneMore() {
 		System.out.println("First test case 9 started ");
 		NP.clickOnNotification();
