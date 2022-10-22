@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Listeners;
@@ -72,6 +73,16 @@ public class ScheduleModuleAdmin extends Aulas_Base.BaseTest {
 		
 		System.out.println("createScheduleProfile by confirence completed ");
 
+	}
+	
+	@AfterTest
+	public void loggingout() {
+		
+		wait(3000);
+		System.out.println("doing logoutWasDone---");
+		Dologout();
+		System.out.println("logoutWasDone---");
+		
 	}
 	
 	/*@Test(priority=2)

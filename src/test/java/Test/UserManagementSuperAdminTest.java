@@ -3,6 +3,7 @@ package Test;
 import java.awt.AWTException;
 
 import org.openqa.selenium.By;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
 
 import org.testng.annotations.Test;
@@ -41,6 +42,7 @@ public class UserManagementSuperAdminTest extends BaseTest {
 
 	@Test(priority = 1) 
 	public void userCreations() throws InterruptedException {
+		System.out.println("Test case 1 User Management  started ");
 		WaitTil(2000);
 		UM.clickUserManagement();
 		WaitTil(2000);
@@ -67,6 +69,7 @@ public class UserManagementSuperAdminTest extends BaseTest {
 		UM.validateClickCancelOperation();
 		WaitTil(2000);
 		UM.addaUser("OperationCreation");
+		System.out.println("Test case 1 completed ");
 		/*WaitTil(2000);
 		UM.addaUser("OperationCreation1");
 		WaitTil(2000);
@@ -75,28 +78,49 @@ public class UserManagementSuperAdminTest extends BaseTest {
 	@Test(priority = 2)
 	public void validateUserManagementPage() throws InterruptedException {
 		WaitTil(2000);
+		System.out.println("Test case 2 started ");
 		UM.clickUserManagement();
 		WaitTil(2000);
 		UM.validateUserManagementPage();
+		System.out.println("Test case 2 Completed ");
 			
 	}
 	@Test(priority = 3) 
 	public void registrationRequestsApprovals() throws InterruptedException {
 		WaitTil(2000);
+		System.out.println("Test case 3 started ");
 		UM.clickUserManagement();
 		WaitTil(2000);
 		UM.registrationRequestsApprovals();
+		System.out.println("Test case 3 Completed ");
 	}
 
 	@Test(priority = 4) 
 	public void validateRegistrationRequestsPage() throws InterruptedException {
 		WaitTil(2000);
+		System.out.println("Test case 4 started ");
 		UM.clickUserManagement();
 		WaitTil(2000);
 		UM.validateRegistrationRequestsPage();
 		WaitTil(2000);
+		System.out.println("Test case 4 Completed ");
 		
 	}
+	
+	
+	
+	
+	
+	/*@AfterTest
+	public void logoutdoing() throws InterruptedException {
+
+		wait(3000);
+		System.out.println("doing logoutWasDone---");
+		Dologout();
+		System.out.println("logoutWasDone---");
+		
+		
+	}*/
 	
 	/*@Test(priority = 5)
 	public void validateStudentViewmorePage() throws InterruptedException {

@@ -8,6 +8,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.AfterSuite;
 
 
 
@@ -264,9 +265,20 @@ public class NotificationPage extends Aulas_Base.BaseTest
 	}
 	
 	
+	@AfterSuite
+	public void taerDown() {
+		driver.quit();
+	}
 	
 	
-	
+	public void logout() {
+		wait(3000);
+		driver.findElement(By.xpath("(//*[@class='ant-dropdown-trigger'])[1]")).click();
+		wait(3000);
+		driver.findElement(By.xpath("(//*[@class='ant-dropdown-menu-title-content'])[2]")).click();
+		System.out.println("Clicked on the logout button");
+		
+	}
 	
 	
 	

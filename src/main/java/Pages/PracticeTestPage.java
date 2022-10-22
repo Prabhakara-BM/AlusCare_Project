@@ -45,7 +45,7 @@ public class PracticeTestPage extends BaseTest {
 		//System.out.println("The random name is :" + uuid);
 
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//a[contains(@href, '/practise-test')]")).click();
+		driver.findElement(By.xpath("//*[contains(@href, '/classroom')]")).click();
 		Thread.sleep(2000);
 		// click on create test
 		driver.findElement(By.xpath("//span[@class='anticon anticon-plus-circle']")).click();

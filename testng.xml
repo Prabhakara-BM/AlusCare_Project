@@ -3,7 +3,7 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
-   <!--    <class name="Test.NotificationModuleTeacher"/>
+     <!--<class name="Test.NotificationModuleTeacher"/>
       <class name="Test.NotificationModuleOperator"/>
       <class name="Test.TestModuleAdmin"/>
       <class name="Test.feeManagementSuperAdminTest"/>
@@ -28,21 +28,19 @@
       <class name="Test.ClassroomsTest"/>
       <class name="Test.PracticetestSuperAdmin"/>
       <class name="Test.dataOperatorFeeManagerTest"/>
+      <class name="Test.AllModulesSmokeTest"/>
       <class name="Test.SuperAdminCoursesTest"/>
       <class name="Test.ScheduleValidation"/>
       <class name="Test.PracticeTestTeacher"/>
       <class name="Test.teacherFeeManagerTest"/>
+      <class name="Pages.ClassroomPage"/>
       <class name="Test.UserManagementOperatorSide"/>
       <class name="Test.UserManagementTeacherSide"/>
       <class name="Test.ScheduleModuleTeacher"/>
       <class name="Test.TestModuleTeacher"/>
-      <class name="Test.TestModuleDataOperator"/> 
-      <class name="Test.UserManagementSuperAdminTest"/>-->
-       <class name="Test.NotificationModuleDataOper"/>
-        <class name="Test.feeManagementSuperAdminTest"/>
-        <class name="Test.ScheduleModuleAdmin"/>
-        <class name="Test.DataOperatorAdminCoursesTest"/>
-         <class name="Test.UserManagementDataOpeSide"/>
+      <class name="Test.TestModuleDataOperator"/>
+      <class name="Test.UserManagementSuperAdminTest"/> -->
+       <class name="Test.AllModulesSmokeTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

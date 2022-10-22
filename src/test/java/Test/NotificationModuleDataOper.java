@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Listeners;
@@ -58,7 +59,7 @@ public class NotificationModuleDataOper extends Aulas_Base.BaseTest {
 		NP.clickAllNotifications();
 		NP.numberOfBlocksInAllNotifications();
 	}
-	@Test(priority=2)
+/*	@Test(priority=2)
 	public void selectValuesIndropdown() {
 		System.out.println("First test case 2 started ");
 		NP.clickOnNotification();
@@ -95,7 +96,17 @@ public class NotificationModuleDataOper extends Aulas_Base.BaseTest {
 		NP.clickOnPractceTest();
 		NP.clickAllSelectOneByOne();
 		System.out.println("First test case 6 Completed ");
-		}
+		}*/
+	
+	@AfterSuite
+	public void taerDown() {
+		//driver.quit();
+		
+		NP.logout();
+		//driver.quit();
+		System.out.println("After suite was executed----");
+	}
+	
 	/*@Test(priority=7)
 	public void DigitalLibrery() {
 		System.out.println("First test case 7 started ");
@@ -120,5 +131,7 @@ public class NotificationModuleDataOper extends Aulas_Base.BaseTest {
 		
 		System.out.println("First test case 9 Completed ");
 		}*/
+	
+	
 
 }

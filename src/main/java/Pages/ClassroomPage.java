@@ -8,6 +8,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.Test;
 
 
 //import Aulas_Base.TestBase;
@@ -19,7 +20,7 @@ public class ClassroomPage extends Aulas_Base.BaseTest
 	WebElement AutomationClass;
 	@FindBy(xpath="//div[text()='CSE']")
 	WebElement CSESection;
-	@FindBy(xpath="(//li[@class='ant-menu-item ant-menu-item-only-child'])[3]")
+	@FindBy(xpath="//*[contains(@href, '/classroom')]")
 	WebElement Classrooms;
 	@FindBy(xpath="//span[text()='Create New Class']")
 	WebElement CreateClassButton;
@@ -232,6 +233,9 @@ public class ClassroomPage extends Aulas_Base.BaseTest
 		Course1.click();
 		Thread.sleep(2000);
 		Createbutton.click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//*[@class='ant-btn btn-radius-15__height-38 m-r-50 dark-grey']")).click();
+		//driver.findElement(By.xpath("")).click();
 	}
 	public void CreateaNewClass1() throws InterruptedException
 	{
@@ -274,6 +278,7 @@ public class ClassroomPage extends Aulas_Base.BaseTest
 		MaybeLaterbutton.click();
 		Thread.sleep(2000);
 	}
+	@Test(priority=1)
 	public void AddStudent() throws InterruptedException
 	{
 		Thread.sleep(2000);
@@ -293,8 +298,10 @@ public class ClassroomPage extends Aulas_Base.BaseTest
       	Thread.sleep(2000);
       	SelStudentName.click();
       	Thread.sleep(2000);
-      	Addbutton.click();
-      	Thread.sleep(2000);
+      	driver.findElement(By.xpath("//*[@class='text-md dark-grey']")).click();
+      /*	Addbutton.click();
+      	Thread.sleep(2000);*/
+      	
       	
 	}
 	public void AddAssignedStudent() throws InterruptedException

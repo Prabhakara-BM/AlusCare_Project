@@ -27,14 +27,17 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.Listeners;
 
 import Util.TestUtil;
 
+//@Listeners(BrowserSpawner.class)
 public class BaseTest {
 	
 	
 	public static WebDriver driver;
 	public static Properties prop;
+	
 	
 	public BaseTest()
 	{
@@ -356,6 +359,16 @@ public void selectEndDate() {
 
 
 	}
+	
+	public void Dologout() {
+		wait(3000);
+		driver.findElement(By.xpath("(//*[@class='ant-dropdown-trigger'])[1]")).click();
+		wait(3000);
+		driver.findElement(By.xpath("(//*[@class='ant-dropdown-menu-title-content'])[2]")).click();
+		System.out.println("Clicked on the logout button");
+		
+	}
+	
 }
 
 

@@ -997,8 +997,9 @@ public void getDiscriptionMessage() {
 }
 
         public void selectTeacherO() {
-        	wait(2000);
-			driver.findElement(By.id("rc_select_5")).sendKeys("Nk Teacher");
+        	wait(5000);
+			//driver.findElement(By.id("rc_select_5")).sendKeys("Nk Teacher");
+        	driver.findElement(By.xpath("//*[@placeholder='Select Teacher']")).sendKeys("Nk Teacher");
 			wait(2000);
 			driver.findElement(By.xpath("(//*[@class='ant-select-item-option-content'])[14]")).click();
 			wait(2000);

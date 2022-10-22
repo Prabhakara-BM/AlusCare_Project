@@ -1,6 +1,7 @@
 package Test;
 
 import org.openqa.selenium.By;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
 
 import org.testng.annotations.Test;
@@ -97,6 +98,15 @@ public void dataoperatorAdminvalidateRegistrationRequestsPage() throws Interrupt
 	UM.validateRegistrationRequestsPage();
 	WaitTil(2000);
 	System.out.println("The Test case 4 is Completetd ");
+	
+}
+@AfterTest
+public void loggingout() {
+	
+	wait(3000);
+	System.out.println("doing logoutWasDone---");
+	Dologout();
+	System.out.println("logoutWasDone---");
 	
 }
 

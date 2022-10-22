@@ -1,5 +1,6 @@
 package Test;
 
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
@@ -30,15 +31,15 @@ public class ClassroomsTest extends Aulas_Base.BaseTest {
 		
 		
 	}
-	@Test(priority=1, groups="Classrooms Module")
+	/*@Test(priority=1)
 	public void ClickonClassroom() throws InterruptedException{
-System.out.println("Test case 1 started ");
+System.out.println("Test case 1 classRoom started ");
 		Thread.sleep(2000);
 		CR.ClickonClassrooms();
 		System.out.println("Test case 1 completed ");
 		
-	}
-   @Test(priority=2, groups="Classrooms Module")
+	}*/
+  @Test(priority=2)
 	public void CreateaNewClass() throws InterruptedException{
 		Thread.sleep(2000);
 		System.out.println("Test case 2 started ");
@@ -47,16 +48,25 @@ System.out.println("Test case 1 started ");
 		System.out.println("Test case 2 completed ");
 		
 	}
-	
-	/*@Test(priority=3, groups="Classrooms Module")
+@AfterTest
+	public void logoutdoing() throws InterruptedException {
+
+		wait(3000);
+		System.out.println("doing logoutWasDone---");
+		Dologout();
+		System.out.println("logoutWasDone---");
+		
+		
+	}
+	@Test(priority=3, groups="Classrooms Module")
 	public void CreateaNewClass2() throws InterruptedException{
 		Thread.sleep(2000);
 		System.out.println("Test case 4 started ");
 		CR.CreateaNewClass2();
 		System.out.println("Test case 4 completed ");
 		
-	}*/
-   /*@Test(priority=4, groups="Classrooms Module")
+	}
+   @Test(priority=4)
 	public void AddStudent() throws InterruptedException{
 		Thread.sleep(2000);
 		System.out.println("Test case 5 started ");
@@ -173,7 +183,7 @@ System.out.println("Test case 1 started ");
 		CR.ResourceBack();
 		
 	}
-*/	
+	
 
 	
 }

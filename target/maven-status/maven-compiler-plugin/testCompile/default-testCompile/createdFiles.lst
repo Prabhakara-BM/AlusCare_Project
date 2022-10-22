@@ -6,11 +6,13 @@ Test\operationFeeManager.class
 Test\ScheduleModuleOperator.class
 Test\PracticeTestAdmin.class
 Test\teacherFeeManagerTest.class
+Test\AllModulesSmokeTest.class
 Test\AnnouncementTest.class
 Test\PracticeTestStudent.class
 Test\PracticeTestTeacher.class
 Test\ScheduleModuleDataOperator.class
 Test\UserManagementTeacherSide.class
+listerns_Demo\BrowserSpawner.class
 Test\feeManagementSuperAdminTest.class
 Test\PracticetestSuperAdmin.class
 Test\SuperAdminCoursesTest.class
