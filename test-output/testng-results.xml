@@ -1,56 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="10" passed="10" failed="0" skipped="0">
+<testng-results ignored="0" total="7" passed="7" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-10-22T12:29:45 IST" name="Default suite" finished-at="2022-10-22T12:42:19 IST" duration-ms="754191">
+  <suite started-at="2022-10-27T11:18:09 IST" name="Default suite" finished-at="2022-10-27T11:26:25 IST" duration-ms="495725">
     <groups>
     </groups>
-    <test started-at="2022-10-22T12:29:45 IST" name="Default test" finished-at="2022-10-22T12:42:19 IST" duration-ms="754191">
+    <test started-at="2022-10-27T11:18:09 IST" name="Default test" finished-at="2022-10-27T11:26:25 IST" duration-ms="495725">
       <class name="Test.AllModulesSmokeTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:Test.AllModulesSmokeTest@27406a17]" started-at="2022-10-22T12:29:16 IST" name="setup" finished-at="2022-10-22T12:29:45 IST" duration-ms="28919" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:Test.AllModulesSmokeTest@7674f035]" started-at="2022-10-27T11:17:39 IST" name="setup" finished-at="2022-10-27T11:18:09 IST" duration-ms="30390" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="userCreations()[pri:1, instance:Test.AllModulesSmokeTest@27406a17]" started-at="2022-10-22T12:29:45 IST" name="userCreations" finished-at="2022-10-22T12:32:30 IST" duration-ms="165611" status="PASS">
+        <test-method signature="userCreations()[pri:1, instance:Test.AllModulesSmokeTest@7674f035]" started-at="2022-10-27T11:18:09 IST" name="userCreations" finished-at="2022-10-27T11:21:00 IST" duration-ms="170956" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- userCreations -->
-        <test-method signature="validateUserManagementPage()[pri:2, instance:Test.AllModulesSmokeTest@27406a17]" started-at="2022-10-22T12:32:30 IST" name="validateUserManagementPage" finished-at="2022-10-22T12:34:23 IST" duration-ms="112509" status="PASS">
+        <test-method signature="validateUserManagementPage()[pri:2, instance:Test.AllModulesSmokeTest@7674f035]" started-at="2022-10-27T11:21:00 IST" name="validateUserManagementPage" finished-at="2022-10-27T11:22:55 IST" duration-ms="114544" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateUserManagementPage -->
-        <test-method signature="registrationRequestsApprovals()[pri:3, instance:Test.AllModulesSmokeTest@27406a17]" started-at="2022-10-22T12:34:23 IST" name="registrationRequestsApprovals" finished-at="2022-10-22T12:34:38 IST" duration-ms="15126" status="PASS">
+        <test-method signature="registrationRequestsApprovals()[pri:3, instance:Test.AllModulesSmokeTest@7674f035]" started-at="2022-10-27T11:22:55 IST" name="registrationRequestsApprovals" finished-at="2022-10-27T11:23:10 IST" duration-ms="15155" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- registrationRequestsApprovals -->
-        <test-method signature="validateRegistrationRequestsPage()[pri:4, instance:Test.AllModulesSmokeTest@27406a17]" started-at="2022-10-22T12:34:38 IST" name="validateRegistrationRequestsPage" finished-at="2022-10-22T12:35:50 IST" duration-ms="71792" status="PASS">
+        <test-method signature="validateRegistrationRequestsPage()[pri:4, instance:Test.AllModulesSmokeTest@7674f035]" started-at="2022-10-27T11:23:10 IST" name="validateRegistrationRequestsPage" finished-at="2022-10-27T11:24:22 IST" duration-ms="72115" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateRegistrationRequestsPage -->
-        <test-method signature="CreateaNewClass()[pri:5, instance:Test.AllModulesSmokeTest@27406a17]" started-at="2022-10-22T12:35:50 IST" name="CreateaNewClass" finished-at="2022-10-22T12:36:18 IST" duration-ms="27725" status="PASS">
+        <test-method signature="CreateClassRoom()[pri:6, instance:Test.AllModulesSmokeTest@7674f035]" started-at="2022-10-27T11:24:22 IST" name="CreateClassRoom" finished-at="2022-10-27T11:24:57 IST" duration-ms="34614" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- CreateaNewClass -->
-        <test-method signature="AddStudent()[pri:6, instance:Test.AllModulesSmokeTest@27406a17]" started-at="2022-10-22T12:36:18 IST" name="AddStudent" finished-at="2022-10-22T12:36:40 IST" duration-ms="22049" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- AddStudent -->
-        <test-method signature="CourseCreations()[pri:7, instance:Test.AllModulesSmokeTest@27406a17]" started-at="2022-10-22T12:36:40 IST" name="CourseCreations" finished-at="2022-10-22T12:37:39 IST" duration-ms="58926" status="PASS">
+        </test-method> <!-- CreateClassRoom -->
+        <test-method signature="CourseCreations()[pri:7, instance:Test.AllModulesSmokeTest@7674f035]" started-at="2022-10-27T11:24:57 IST" name="CourseCreations" finished-at="2022-10-27T11:25:57 IST" duration-ms="60464" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CourseCreations -->
-        <test-method signature="CourseUpdate()[pri:8, instance:Test.AllModulesSmokeTest@27406a17]" started-at="2022-10-22T12:37:39 IST" name="CourseUpdate" finished-at="2022-10-22T12:38:06 IST" duration-ms="27640" status="PASS">
+        <test-method signature="CourseUpdate()[pri:8, instance:Test.AllModulesSmokeTest@7674f035]" started-at="2022-10-27T11:25:57 IST" name="CourseUpdate" finished-at="2022-10-27T11:26:25 IST" duration-ms="27761" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CourseUpdate -->
-        <test-method signature="createScheduleProfile()[pri:9, instance:Test.AllModulesSmokeTest@27406a17]" started-at="2022-10-22T12:38:06 IST" name="createScheduleProfile" finished-at="2022-10-22T12:40:11 IST" duration-ms="124999" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createScheduleProfile -->
-        <test-method signature="createSceduleForBroadcast()[pri:10, instance:Test.AllModulesSmokeTest@27406a17]" started-at="2022-10-22T12:40:11 IST" name="createSceduleForBroadcast" finished-at="2022-10-22T12:42:19 IST" duration-ms="127739" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createSceduleForBroadcast -->
       </class> <!-- Test.AllModulesSmokeTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

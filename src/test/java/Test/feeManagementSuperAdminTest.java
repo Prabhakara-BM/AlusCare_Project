@@ -46,6 +46,7 @@ public class feeManagementSuperAdminTest extends BaseTest {
 		WaitTil(2000);
 		FM.validateFeemanagementPage();
 		WaitTil(2000);
+		System.out.println("--------The test case 1 was started------- ");
 		
 	}
 

@@ -6,8 +6,7 @@
       <class name="Test.AllModulesSmokeTest">
         <methods>
           <include name="setup"/>
-          <include name="userCreations"/>
-          <include name="validateUserManagementPage"/>
+          <include name="CreateClassRoom"/>
         </methods>
       </class> <!-- Test.AllModulesSmokeTest -->
     </classes>

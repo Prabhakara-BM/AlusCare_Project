@@ -69,6 +69,7 @@ public class ScheduleModuleAdmin extends Aulas_Base.BaseTest {
 		//SP.lastDaySelection();
 		selectEndDate();
 		SP.clickOnSave();
+		
 		//SP.getDiscriptionMessage();
 		
 		System.out.println("createScheduleProfile by confirence completed ");

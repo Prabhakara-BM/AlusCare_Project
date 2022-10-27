@@ -118,7 +118,7 @@ public class AllModulesSmokeTest extends BaseTest {
 	}
 	
 	/*************************ClassRoom**********************/
-	 @Test(priority=5)
+	/* @Test(priority=5)
 		public void CreateaNewClass() throws InterruptedException{
 			Thread.sleep(2000);
 			System.out.println("ClassRoom:Test case 5 started ");
@@ -127,12 +127,16 @@ public class AllModulesSmokeTest extends BaseTest {
 			WaitTil(4000);
 			System.out.println("ClassRoom:Test case 5 completed ");
 			
-		}
+		}*/
 	 @Test(priority=6)
-		public void AddStudent() throws InterruptedException{
+		public void CreateClassRoom() throws InterruptedException{
 			Thread.sleep(2000);
 			System.out.println("ClassRoom:Test case 6 started ");
-			CR.AddStudent();
+			CR.clickingClassRoom();
+			CR.clickOnCreateNewClass();
+			CR.enterClassRoomDetails();
+			CR.clickONSAVE();
+			CR.cilckMayBeLater();
 			WaitTil(4000);
 			System.out.println("ClassRoom:Test case 6 completed ");
 			
@@ -164,12 +168,13 @@ public class AllModulesSmokeTest extends BaseTest {
 		}
 		
 	 /*******************************ScheduleModule*******************/
-	 @Test(priority=9)
+	/* @Test(priority=9)
 		public void createScheduleProfile() throws InterruptedException {
 
 			System.out.println("ScheduleModule:Test case 9 is started...");
 			SP.clickOnSceduleModule();
-			SP.clickOnCreateButton();
+			//SP.clickOnCreateButton();
+			SP.clickOnCreateButtonInTimeTable();
 			SP.selectSubject();
 			SP.selectClass();
 			//SP.selectTeacher();
@@ -214,6 +219,7 @@ public class AllModulesSmokeTest extends BaseTest {
 			//LC.newLogin2("","");
 			
 			
-		}
+		}*/
+	 
 	 
 }

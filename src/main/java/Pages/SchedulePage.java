@@ -40,6 +40,14 @@ public class SchedulePage extends Aulas_Base.BaseTest {
 		driver.findElement(By.xpath("(//*[@class='ant-btn ant-btn-primary'])[1]")).click();
 		System.out.println("--clicked on the create button-- ");
 	}
+	public void clickOnCreateButtonInTimeTable() throws InterruptedException {
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("(//*[@class='ant-tabs-tab-btn'])[2]")).click();
+		WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//*[@class='ant-btn ant-btn-primary'])[1]")));
+		driver.findElement(By.xpath("(//*[@class='ant-btn ant-btn-primary'])[1]")).click();
+		System.out.println("--clicked on the create button-- ");
+	}
 
 	public void selectSubject() throws InterruptedException {
 		Thread.sleep(4000);

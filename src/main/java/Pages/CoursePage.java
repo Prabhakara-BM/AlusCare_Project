@@ -114,6 +114,7 @@ public class CoursePage extends BaseTest
 		Course.click();
 		WaitTil(2000);
 		WaitTil(2000);
+		
 		AddCourse.click();
 		WaitTil(2000);
 		CancelButton.click();

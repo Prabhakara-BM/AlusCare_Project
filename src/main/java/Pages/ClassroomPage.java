@@ -916,4 +916,75 @@ public class ClassroomPage extends Aulas_Base.BaseTest
 	}
 	*/
 
+	
+	/*********************************New Coding**************************************/
+	public void clickingClassRoom() {
+		wait(3000);
+		driver.findElement(By.xpath("//*[contains(@href, '/classroom')]")).click();
+		System.out.println("Clicked on classRoom Module");
+		
+		}
+	public void clickOnCreateNewClass() {
+		wait(3000);
+		driver.findElement(By.xpath("//span[text()='Create New Class']")).click();
+		wait(3000);
+		System.out.println("Clicked on create new class");
+	}
+	
+	public void enterClassRoomDetails() {
+		wait(3000);
+		generateRandomPassword(3);
+		driver.findElement(By.xpath("//*[@placeholder='Example-VII']")).sendKeys(generateRandomPassword(3));
+		wait(3000);
+		System.out.println("class name is entered--");
+		driver.findElement(By.xpath("//*[@placeholder='Maximum 3 characters']")).sendKeys(generateRandomPassword(3));
+		wait(3000);
+		System.out.println("Section name is entered--");
+		driver.findElement(By.xpath("//*[@class='ant-select-selection-search-input']")).sendKeys(generateRandomPassword(3));
+		wait(3000);
+		System.out.println("Course name is entered--");
+		
+	}
+	
+	public void clickONSAVE() {
+		wait(3000);
+		driver.findElement(By.xpath("//*[@class='ant-btn ant-btn-primary btn-radius-15__height-38']")).click();
+		System.out.println("Clicked on save button...--");
+		
+	}
+	
+	public void cilckMayBeLater() {
+		
+		wait(3000);
+		driver.findElement(By.xpath("//*[text()='Maybe Later']")).click();
+		System.out.println("Clicked on Maybe Later button...--");
+		
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
