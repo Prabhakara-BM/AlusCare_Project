@@ -19,6 +19,7 @@ public class NotificationTest extends Aulas_Base.BaseTest{
 		super();
 	}
 	
+
 	@BeforeMethod
 	public void setup() throws InterruptedException{
 		initilization();
